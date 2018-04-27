@@ -8,7 +8,6 @@ import { HttpLinkModule, HttpLink  } from 'apollo-angular-link-http';
 import { ApolloLink, concat, from} from 'apollo-link';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { onError } from 'apollo-link-error';
-import { environment } from '../../../environments/environment';
 import { ModuleWithProviders } from '@angular/compiler/src/core';
 import { CustomApolloService } from './custom-apollo.service';
 import { CustomApolloModuleConfig, CustomApolloModuleConfigName } from './custom-apollo.model';

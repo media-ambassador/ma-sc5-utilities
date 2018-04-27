@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { NotificationsService } from 'angular2-notifications';
-import { environment } from '../../../environments/environment';
 import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 
@@ -30,8 +29,7 @@ export class Sc5UtilsService {
   }
 
   logoutUser(timeout = 1500) {
-    localStorage.removeItem(environment.tokenKeyName);
-    localStorage.removeItem(environment.identityKeyName);
+    //TODO: Remove cookie
     this.notificationsService.success(this.translate.instant("common.logout.user.notification"));
     this.redirectToModule('authentication', timeout);
   }

@@ -6,7 +6,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --aot",
+    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -44,6 +44,7 @@
     "@material-extended/mde": "^1.0.0-alpha.10",
     "@ngx-translate/core": "^9.0.1",
     "@ngx-translate/http-loader": "^2.0.1",
+    "@types/core-js": "^0.9.46",
     "angular2-notifications": "^1.0.1",
     "apollo-angular": "^1.0.0",
     "apollo-angular-link-http": "^1.0.1",

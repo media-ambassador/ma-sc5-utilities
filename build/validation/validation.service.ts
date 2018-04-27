@@ -16,7 +16,7 @@ export class ValidationService {
   }
 
   setError(formControl: FormControl, messages: IValidationMessage[]) {
-    var errors = {};
+    var errors: any = {};
     _.forEach(messages, message => {
       errors[message.name] = {
         key: `validation.error.${message.name}`,
@@ -28,7 +28,7 @@ export class ValidationService {
   }
 
   private mapValidationOption(options: IValidationMessageOption[]) {
-    var variables = {};
+    var variables: any = {};
     _.forEach(options, option => {
       variables[option.name] = option.value
     })

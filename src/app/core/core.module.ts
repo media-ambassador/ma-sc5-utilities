@@ -3,12 +3,9 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 
-
-
 import { ValidationService } from './validation/validation.service';
 import { Sc5UtilsService } from './sc5-utils/sc5-utils.service';
 import { CustomApolloModule } from './custom-apollo/custom-apollo.module';
-import { environment } from '../../environments/environment';
 import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
@@ -17,8 +14,8 @@ import { CookieService } from 'ngx-cookie-service';
     HttpModule,
     HttpClientModule,
     CustomApolloModule.forRoot({
-      apiUrl: environment.apiGraphQL,
-      tokenKey: environment.tokenKeyName
+      apiUrl: 'http://demo.rgorecki.starcommerce.io/user',
+      tokenKey: 'x-session-token'
     })
   ],
   exports: [
