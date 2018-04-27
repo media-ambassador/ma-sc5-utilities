@@ -3,7 +3,7 @@ const inlineNg2Template = require('gulp-inline-ng2-template');
 var runSequence = require('run-sequence');
 
 gulp.task('inline-build-templates', function() {
-    return gulp.src(['./src/app/common/**/*.ts', '!./src/app/common/**/*.spec.ts'])
+    return gulp.src(['./src/app/core/**/*.ts', './src/app/shared/**/*.ts', '!./src/app/**/*.spec.ts'])
         .pipe(inlineNg2Template({
             target: 'es5',
             useRelativePaths: true
