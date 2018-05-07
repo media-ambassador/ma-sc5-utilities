@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms/src/model';
-import { IResponseValidation, IValidationMessage, IValidationMessageOption } from '../common.model';
+import { IValidationMessage, IValidationMessageOption } from './validation.model';
+import { IResponseValidation } from '../custom-apollo/custom-apollo.model';
+
 import * as _ from 'lodash';
 
 @Injectable()

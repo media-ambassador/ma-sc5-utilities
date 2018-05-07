@@ -14,7 +14,7 @@ import { CookieService } from 'ngx-cookie-service';
     HttpModule,
     HttpClientModule,
     CustomApolloModule.forRoot({
-      apiUrl: 'http://demo.rgorecki.starcommerce.io/user',
+      apiUrl: 'http://develop.tkuchne.starcommerce.io/user',
       tokenKey: 'x-session-token'
     })
   ],
