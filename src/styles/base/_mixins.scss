@@ -53,3 +53,19 @@
 		fill: $color;
 	}
 }
+
+@mixin center() {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@mixin set-table-height($height) {
+	&::ng-deep > .sc5-table-wrapper {
+		height: $height;
+		width: 100%;
+
+		> perfect-scrollbar { max-height: calc(#{$height} - (#{$table-header-height} + #{$mat-paginator-height})); }
+	}
+}

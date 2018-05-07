@@ -1,1 +1,0 @@
-[{"__symbolic":"module","version":4,"metadata":{"IValidationMessageOption":{"__symbolic":"interface"},"IValidationMessage":{"__symbolic":"interface"},"IResponseValidation":{"__symbolic":"interface"},"ILoginIdentity":{"__symbolic":"interface"},"CustomResponse":{"__symbolic":"interface"},"TableSearchSort":{"__symbolic":"interface"},"TableSearch":{"__symbolic":"interface"}}}]

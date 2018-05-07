@@ -25,7 +25,6 @@ export class CustomApolloService {
         operation.setContext({
           headers: new HttpHeaders().set('x-jwt-token', this.cookieService.get(config.tokenKey))
         });
-        console.log(operation);
       }
       return forward(operation);
     });
@@ -39,8 +38,7 @@ export class CustomApolloService {
       if (networkError) {
         switch ((<any>networkError).status) {
           case 401: {
-            //window.location.href = `${window.location.protocol}//${window.location.host}/`; 
-            break;
+            throw('401 not authorized');
           }
         }
       }
@@ -60,6 +58,5 @@ export class CustomApolloService {
         }
       }
     });
-    console.log(this.apollo);
   }
 }

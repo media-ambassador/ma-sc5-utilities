@@ -8,15 +8,3 @@ export interface ILoginIdentity {
   default_service: string;
   password_timestamp: number;
 }
-
-export interface TableSearchSort {
-  column: string;
-  asc: boolean;
-}
-
-export interface TableSearch {
-  page?: number;
-  limit?: number;
-  query?: Object;
-  sort?: TableSearchSort[];
-}

@@ -1,0 +1,116 @@
+@import '../../../../styles/lib';
+
+:host {
+
+  .sc5-table-wrapper {
+    position: relative;
+    padding-bottom: $mat-paginator-height;
+    @include size(100%);
+
+    .table-loader {
+      @include center();
+    }
+
+    > header {
+      display: flex;
+      width: 100%;
+      justify-content: flex-end;
+      align-items: center;
+      height: $table-header-height;
+      padding: 25px 25px 15px 25px;
+      background: white;
+
+      > h1 {
+        flex: 1;
+        margin: 0;
+      }
+
+      > div {
+        button {
+          border: none;
+          background: none;
+          &:focus { outline: none; }
+        }
+      }
+    }
+
+    mat-table {
+      padding-top: $table-header-cell;
+
+      &::ng-deep {
+
+        .mat-header-cell, .mat-cell {
+          margin-right: 20px;
+          &:last-of-type { margin-right: 0; }
+        }
+
+        .mat-header-cell {
+          position: relative;
+          overflow: visible;
+          margin-bottom: 0px;
+
+          .filter-field {
+            position: absolute;
+            bottom: -60px;
+            left: 0;
+            display: flex;
+            width: 100%;
+            z-index: 15;
+
+            > * { flex: 1; }
+
+            mat-input-container::ng-deep .mat-form-field-infix { max-width: 100%; }
+          }
+        }
+
+        .mat-header-row {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          background: white;
+          z-index: 5;
+
+
+        }
+      
+        .mat-cell { overflow: visible; }
+
+        .mat-column-select {
+          max-width: 50px;
+
+          &::ng-deep {
+            .mat-checkbox label { margin-top: 5px; }
+          }
+        }
+      }
+    }
+
+    &.loading {
+      mat-table { opacity: 0.2; }
+    }
+
+    .dropdown-selection {
+      position: relative;
+      border: none;
+      background: none;
+      padding: 0;
+
+      &::before {
+        display: block;
+        content: "";
+        @include center();
+        @include size(100%);
+        z-index: 1;
+      }
+    }
+
+    footer {
+      display: block;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+  }
+}

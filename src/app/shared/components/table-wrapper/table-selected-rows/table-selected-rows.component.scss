@@ -1,0 +1,41 @@
+@import '../../../../../styles/lib';
+
+:host {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  width: 100%;
+  padding: 18px 25px;
+  background: mat-color($mat-orange, 600);
+
+  .selection-count {
+    display: flex;
+    align-items: center;
+
+    span {
+      color: white;
+    }
+  }
+
+  .actions {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+
+    &::ng-deep {
+      button {
+        border: none;
+        background: none;
+        margin-left: 5px;
+
+        &:focus { outline: none; }
+        &:first-of-type { margin-left: 0; }
+        mat-icon { color: white; }
+      }
+    }
+  }
+
+}

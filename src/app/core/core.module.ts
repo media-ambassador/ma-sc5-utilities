@@ -7,6 +7,7 @@ import { ValidationService } from './validation/validation.service';
 import { Sc5UtilsService } from './sc5-utils/sc5-utils.service';
 import { CustomApolloModule } from './custom-apollo/custom-apollo.module';
 import { CookieService } from 'ngx-cookie-service';
+import { ApiUserService } from './api-user/api-user.service';
 
 @NgModule({
   imports: [
@@ -24,6 +25,7 @@ import { CookieService } from 'ngx-cookie-service';
 
     ValidationService,
     CookieService,
+    ApiUserService,
     Sc5UtilsService
   ]
 })
