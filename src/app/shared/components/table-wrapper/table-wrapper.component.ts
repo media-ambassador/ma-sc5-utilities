@@ -5,9 +5,9 @@ import { SelectionModel, DataSource } from '@angular/cdk/collections';
 import { Subscription } from 'rxjs/Subscription';
 import { Observable } from 'apollo-link';
 import { merge } from 'rxjs/observable/merge';
-import { TableSearch, TableColumn, TableSelectionEmmiter } from '../base-table/base-table.model';
 
-import { MaSc5BaseTableDataSource } from '../base-table/base-table.data-source';
+import { MaSc5BaseTableDataSource } from './base-table/base-table.data-source';
+import { TableColumn, TableSelectionEmmiter, TableSearch } from './base-table/base-table.model';
 
 import * as _ from 'lodash';
 
@@ -93,25 +93,25 @@ export class MaSc5TableWrapperComponent<T> implements OnInit {
     this.dataSource.loadData(search);
   }
 
-  updateColumnDisplay(index) {
+  updateColumnDisplay(index: number) {
     this.columns[index].display = !this.columns[index].display;
     this.columnDisplayChange.emit(this.columns);
   }
 
-  isSelected(row) {
+  isSelected(row: T): T {
     return _.find(this.selection.selected, item => item[this.selectionField] == row[this.selectionField]);
   }
 
-  toggleSelection(row) {
+  toggleSelection(row: T) {
     this.isSelected(row)
-      ? _.remove(this.selection.selected, item => item[this.selectionField] == row[this.selectionField])
+      ? _.remove(this.selection.selected, (item: any) => item[this.selectionField] == row[this.selectionField])
       : this.selection.selected.push(row);
 
     this.selectionCurrentPage =this.selectionAll = false;
     this.emitSelection();
   }
 
-  selectRow(row) {
+  selectRow(row: T) {
     if (this.isSelected(row))
       return;
 

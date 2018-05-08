@@ -4,7 +4,6 @@ import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 
 import { ApiUser, ApiGetUserResponse } from './api-user.model';
-import { TableSearch } from '../../shared/components/base-table/base-table.model';
 
 const GetUsersQuery = gql`
 query getUsers($search:UserSearchParams!){
@@ -26,7 +25,7 @@ export class ApiUserService {
 
   constructor(private apollo: Apollo) { }
 
-  getUsers(search: TableSearch = {}): Observable<ApiGetUserResponse> {
+  getUsers(search: any = {}): Observable<ApiGetUserResponse> {
     return new Observable<ApiGetUserResponse>(observer => {
       this.apollo.watchQuery({
         query: GetUsersQuery,

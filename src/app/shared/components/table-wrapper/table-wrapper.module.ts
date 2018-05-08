@@ -5,6 +5,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 
+import { MaSc5BaseTableComponent } from './base-table/base-table.component';
 import { MaSc5TableWrapperComponent } from './table-wrapper.component';
 import { MaSc5TableSelectedRowsComponent } from './table-selected-rows/table-selected-rows.component';
 import { CustomMaterialModule } from '../../custom-material.module';
@@ -27,10 +28,12 @@ export function HttpLoaderTableWrapperFactory(http: HttpClient) {
     PerfectScrollbarModule,
   ],
   declarations: [
+    MaSc5BaseTableComponent,
     MaSc5TableWrapperComponent,
     MaSc5TableSelectedRowsComponent
   ],
   exports: [
+    MaSc5BaseTableComponent,
     MaSc5TableWrapperComponent,
     MaSc5TableSelectedRowsComponent
   ]
