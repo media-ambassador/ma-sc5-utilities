@@ -8,9 +8,10 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateService } from '@ngx-translate/core';
 
-import { CustomMaterialModule } from './custom-material.module';
+import { MaSc5CustomMaterialModule } from '../lib/modules/custom-material/custom-material.module';
+import { MaSc5TableWrapperModule } from '../lib/modules/table-wrapper/table-wrapper.module';
 
-import { MapToIterablePipe } from './pipes/map-to-iterable/map-to-iterable.pipe';
+import { MapToIterablePipe } from '../lib/pipes/map-to-iterable/map-to-iterable.pipe';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -22,14 +23,16 @@ export function HttpLoaderFactory(http: HttpClient) {
     FormsModule,
     RouterModule,
     ReactiveFormsModule,
-    CustomMaterialModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+
+    MaSc5CustomMaterialModule,
+    MaSc5TableWrapperModule
   ],
   declarations: [
     MapToIterablePipe,
@@ -37,8 +40,10 @@ export function HttpLoaderFactory(http: HttpClient) {
   exports: [
     FormsModule,
     ReactiveFormsModule,
-    CustomMaterialModule,
     TranslateModule,
+
+    MaSc5CustomMaterialModule,
+    MaSc5TableWrapperModule,
 
     MapToIterablePipe,
   ]

@@ -1,6 +1,8 @@
+import { NgModule, Injector, APP_INITIALIZER } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LOCATION_INITIALIZED } from '@angular/common';
+import { TranslateService } from '@ngx-translate/core';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -8,6 +10,23 @@ import { CoreModule } from './core/core.module';
 
 import { AppComponent } from './app.component';
 import { DemosModule } from './demos/demos.module';
+
+export function appInitializerFactory(translate: TranslateService, injector: Injector) {
+  return () => new Promise<any>((resolve: any) => {
+    const locationInitialized = injector.get(LOCATION_INITIALIZED, Promise.resolve(null));
+    locationInitialized.then(() => {
+      const langToSet = 'pl'
+      translate.setDefaultLang('pl');
+      translate.use(langToSet).subscribe(() => 
+        success => {
+          console.log(success);
+        },
+        err => console.error(`Problem with '${langToSet}' language initialization.'`),
+        () => { resolve(null);
+      });
+    });
+  });
+}
 
 @NgModule({
   imports: [
@@ -20,6 +39,14 @@ import { DemosModule } from './demos/demos.module';
   ],
   declarations: [
     AppComponent
+  ],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: appInitializerFactory,
+      deps: [TranslateService, Injector],
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

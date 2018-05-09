@@ -1,14 +1,14 @@
 {
-  "common.logout.user.notification": "Użytkownik został wylogowany",
-  "main.footer.copyright": "Copyright © 2008-2017",
-  "main.footer.mediaAmbassador": "MediaAmbassador.com",
-  "main.footer.supportEmail": "support@mediaambassador.pl",
-  "main.footer.supportTel": "+48 7178 57 665",
-  "main.footer.technicalSupport": "Pomoc techniczna:",
-  "main.header.channels": "Kanały sprzedaży",
-  "main.header.title": "Administracja operatorami",
-  "main.header.user.menu.edit": "Edytuj",
-  "main.header.user.menu.logout": "Wyloguj",
-  "service.account": "Moje konto",
-  "service.user": "Zarządzanie"
+	"common.status.Active": "Aktywny",
+	"common.status.Inactive": "Nieaktywny",
+	"table.common.selectAll": "Wszystkie",
+	"table.common.selectCurrentPage": "Na tej stronie",
+	"table.common.filter": "filtruj...",
+	"table.common.selectedRows": "Zaznaczonych elementów: {{count}}",
+	"table.header.column.firstname": "imię",
+	"table.header.column.id": "login",
+	"table.header.column.lastname": "nazwisko",
+	"table.header.column.status": "status",
+	"table.common.itemsPerPage": "Elementów na stronie:",
+	"home.userList.header": "Demo lista użytkowników"
 }

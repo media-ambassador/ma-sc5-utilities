@@ -1,0 +1,13 @@
+{
+	"common.status.Active": "Aktywny",
+	"common.status.Inactive": "Nieaktywny",
+	"table.common.selectAll": "Wszystkie",
+	"table.common.selectCurrentPage": "Na tej stronie",
+	"table.common.filter": "filtruj...",
+	"table.common.selectedRows": "Zaznaczonych elementów: {{count}}",
+	"table.header.column.firstname": "imię",
+	"table.header.column.id": "login",
+	"table.header.column.lastname": "nazwisko",
+	"table.header.column.status": "status",
+	"table.common.itemsPerPage": "Elementów na stronie:"
+}

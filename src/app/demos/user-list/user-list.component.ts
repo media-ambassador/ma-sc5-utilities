@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { SelectionModel } from '@angular/cdk/collections';
+
+import { MaSc5BaseTableComponent } from '../../lib/modules/table-wrapper/base-table/base-table.component';
+import { TableSelectionEmmiter } from '../../lib/modules/table-wrapper/base-table/base-table.model';
+
 import { ApiUser } from '../../core/api-user/api-user.model';
 import { ApiUserService } from '../../core/api-user/api-user.service';
-import { MaSc5BaseTableComponent } from '../../shared/components/base-table/base-table.component';
 import { UsersDataSource } from './users-list-data-source';
-import { TableSelectionEmmiter } from '../../shared/components/base-table/base-table.model';
 
 @Component({
   selector: 'ma-sc5-user-list',

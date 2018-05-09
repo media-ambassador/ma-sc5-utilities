@@ -1,4 +1,4 @@
-import { CustomResponse } from "../custom-apollo/custom-apollo.model";
+import { CustomResponse } from "../../lib/modules/custom-apollo/custom-apollo.model";
 
 export type ApiUserStatus = 'Active' | 'Inactive';
 export type ApiUserEventType = 'authentication_succeded' | 'authentication_failed' | 'password_changed';
