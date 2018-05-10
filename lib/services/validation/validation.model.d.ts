@@ -1,9 +1,9 @@
-export interface IValidationMessageOption {
+export interface MaSc5ValidationMessageOption {
     name: string;
     value: string;
 }
-export interface IValidationMessage {
+export interface MaSc5ValidationMessage {
     name: string;
     template: string;
-    options: IValidationMessageOption[];
+    options: MaSc5ValidationMessageOption[];
 }

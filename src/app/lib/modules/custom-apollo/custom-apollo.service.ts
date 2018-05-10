@@ -5,21 +5,24 @@ import { ApolloLink, from } from "apollo-link";
 import { HttpHeaders } from "@angular/common/http";
 import { onError } from "apollo-link-error";
 import { InMemoryCache } from "apollo-cache-inmemory";
-import { CustomApolloModuleConfigName, CustomApolloModuleConfig } from "./custom-apollo.model";
 import { CookieService } from 'ngx-cookie-service';
+
+import { MaSc5CustomApolloModuleConfigName, MaSc5CustomApolloModuleConfig } from "./custom-apollo.model";
+import { MaSc5UtilsService } from "../../services/sc5-utils/sc5-utils.service";
 
 @Injectable()
 export class MaSc5CustomApolloService {
 
-  constructor(@Inject(CustomApolloModuleConfigName) private config: CustomApolloModuleConfig,
+  constructor(@Inject(MaSc5CustomApolloModuleConfigName) private config: MaSc5CustomApolloModuleConfig,
               private apollo: Apollo,
               private httpLink: HttpLink,
-              private cookieService: CookieService) {
+              private cookieService: CookieService,
+              private utilsService: MaSc5UtilsService) {
 
     this.initApollo(config);
   }
 
-  private initApollo(config: CustomApolloModuleConfig) {
+  private initApollo(config: MaSc5CustomApolloModuleConfig) {
     const authMiddleware = new ApolloLink((operation, forward) => {
       if (this.cookieService.check(config.tokenKey)) {
         operation.setContext({
@@ -38,7 +41,7 @@ export class MaSc5CustomApolloService {
       if (networkError) {
         switch ((<any>networkError).status) {
           case 401: {
-            throw('401 not authorized');
+            this.utilsService.logoutUser();
           }
         }
       }

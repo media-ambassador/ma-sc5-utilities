@@ -7,7 +7,7 @@ import { Observable } from 'apollo-link';
 import { merge } from 'rxjs/observable/merge';
 
 import { MaSc5BaseTableDataSource } from './base-table/base-table.data-source';
-import { TableColumn, TableSelectionEmmiter, TableSearch } from './base-table/base-table.model';
+import { MaSc5TableColumn, MaSc5TableSelectionEmmiter, MaSc5TableSearch } from './base-table/base-table.model';
 
 import * as _ from 'lodash';
 
@@ -20,13 +20,13 @@ export class MaSc5TableWrapperComponent<T> implements OnInit {
   @Input() header: string;
   @Input() dataSource: MaSc5BaseTableDataSource<T>;
   @Input() totalCount: number;
-  @Input() columns: TableColumn[];
+  @Input() columns: MaSc5TableColumn[];
   @Input() selectionField: string;
   @Input() pageSize: number;
   @Input() pageSizeOptions: number[];
 
-  @Output() columnDisplayChange = new EventEmitter<TableColumn[]>();
-  @Output() selectionChange = new EventEmitter<TableSelectionEmmiter<T>>();
+  @Output() columnDisplayChange = new EventEmitter<MaSc5TableColumn[]>();
+  @Output() selectionChange = new EventEmitter<MaSc5TableSelectionEmmiter<T>>();
   
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatTable) table: MatTable<T>;
@@ -84,7 +84,7 @@ export class MaSc5TableWrapperComponent<T> implements OnInit {
   }
 
   private onTableSearchChange() {
-    let search: TableSearch = {
+    let search: MaSc5TableSearch = {
       page: this.paginator.pageIndex + 1,
       limit: this.paginator.pageSize,
       sort: !!this.dataSource.sort.active ? [{column: this.dataSource.sort.active, asc: this.dataSource.sort.direction === 'asc'}] : null

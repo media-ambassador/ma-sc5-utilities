@@ -3,7 +3,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({
   name: 'mapToIterable'
 })
-export class MapToIterablePipe implements PipeTransform  {
+export class MaSc5MapToIterablePipe implements PipeTransform  {
   transform(dictionary: any): any {
     var result = [];
     for (var key in dictionary) {

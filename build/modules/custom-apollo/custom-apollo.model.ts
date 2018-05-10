@@ -1,20 +1,20 @@
-import { IValidationMessage } from "../../services/validation/validation.model";
+import { MaSc5ValidationMessage } from "../../services/validation/validation.model";
 
-export const CustomApolloModuleConfigName = 'customApolloModuleConfig';
-export interface CustomApolloModuleConfig {
+export const MaSc5CustomApolloModuleConfigName = 'customApolloModuleConfig';
+export interface MaSc5CustomApolloModuleConfig {
   apiUrl: string;
   tokenKey: string;
 };
 
-export interface IResponseValidation {
+export interface MaSc5ResponseValidation {
   field: string,
-  messages: IValidationMessage[];
+  messages: MaSc5ValidationMessage[];
 }
 
-export type CustomResponse = {
+export type MaSc5CustomResponse = {
   success: boolean,
   error: "invalid" | "validation" | "not-found" | "invalid" | "invalid-token" | "banned" | "not-logged",
-  validation: IResponseValidation[]
+  validation: MaSc5ResponseValidation[]
 }
 
 

@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { ValidationService } from './validation.service';
+import { MaSc5ValidationService } from './validation.service';
 
 describe('ValidationService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ValidationService]
+      providers: [MaSc5ValidationService]
     });
   });
 
-  it('should be created', inject([ValidationService], (service: ValidationService) => {
+  it('should be created', inject([MaSc5ValidationService], (service: MaSc5ValidationService) => {
     expect(service).toBeTruthy();
   }));
 });

@@ -4,7 +4,7 @@ import { BehaviorSubject } from "rxjs/BehaviorSubject";
 import { catchError, finalize } from 'rxjs/operators';
 
 import { MaSc5BaseTableDataSource } from "../../lib/modules/table-wrapper/base-table/base-table.data-source";
-import { TableSearch } from "../../lib/modules/table-wrapper/base-table/base-table.model";
+import { MaSc5TableSearch } from "../../lib/modules/table-wrapper/base-table/base-table.model";
 
 import { ApiUser } from "../../core/api-user/api-user.model";
 import { ApiUserService } from "../../core/api-user/api-user.service";
@@ -17,7 +17,7 @@ export class UsersDataSource extends MaSc5BaseTableDataSource<ApiUser> {
     super();
   }
 
-  loadData(search: TableSearch = {}) {
+  loadData(search: MaSc5TableSearch = {}) {
     super.loadData(search);
 
     this.userService.getUsers(search)

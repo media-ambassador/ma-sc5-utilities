@@ -1,23 +1,23 @@
 import { Injectable } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms/src/model';
-import { IValidationMessage, IValidationMessageOption } from './validation.model';
-import { IResponseValidation } from '../../modules/custom-apollo/custom-apollo.model';
+import { MaSc5ValidationMessage, MaSc5ValidationMessageOption } from './validation.model';
+import { MaSc5ResponseValidation } from '../../modules/custom-apollo/custom-apollo.model';
 
 import * as _ from 'lodash';
 
 @Injectable()
-export class ValidationService {
+export class MaSc5ValidationService {
 
   constructor() { }
 
-  handleValidation(form: FormGroup, validation: IResponseValidation[]) {
+  handleValidation(form: FormGroup, validation: MaSc5ResponseValidation[]) {
     _.forEach(validation, item => {
       var formControl = form.controls[item.field] as FormControl;
       this.setError(formControl, item.messages);
     });
   }
 
-  setError(formControl: FormControl, messages: IValidationMessage[]) {
+  setError(formControl: FormControl, messages: MaSc5ValidationMessage[]) {
     var errors: any = {};
     _.forEach(messages, message => {
       errors[message.name] = {
@@ -29,7 +29,7 @@ export class ValidationService {
     formControl.setErrors(errors);
   }
 
-  private mapValidationOption(options: IValidationMessageOption[]) {
+  private mapValidationOption(options: MaSc5ValidationMessageOption[]) {
     var variables: any = {};
     _.forEach(options, option => {
       variables[option.name] = option.value

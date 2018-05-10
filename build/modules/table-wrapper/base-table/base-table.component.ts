@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { MatSort } from '@angular/material';
 
-import { TableColumn } from "./base-table.model";
+import { MaSc5TableColumn } from "./base-table.model";
 import { MaSc5BaseTableDataSource } from './base-table.data-source';
 
 @Component({
@@ -13,7 +13,7 @@ export class MaSc5BaseTableComponent<T> implements OnInit {
   @ViewChild(MatSort) tableSort: MatSort;
 
   dataSource: MaSc5BaseTableDataSource<T>;
-  columns: TableColumn[] = [];
+  columns: MaSc5TableColumn[] = [];
   displayedColumns: string[] = [];
 
   constructor() { }
@@ -37,7 +37,7 @@ export class MaSc5BaseTableComponent<T> implements OnInit {
     this.displayedColumns = columns;
   }
 
-  setColumns(columns: TableColumn[]) {
+  setColumns(columns: MaSc5TableColumn[]) {
     this.columns = columns;
     this.updateDisplayedColumns();
   }

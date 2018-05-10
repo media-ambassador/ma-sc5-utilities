@@ -9,8 +9,9 @@ import { ApolloLink, concat, from} from 'apollo-link';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { onError } from 'apollo-link-error';
 import { ModuleWithProviders } from '@angular/compiler/src/core';
+
 import { MaSc5CustomApolloService } from './custom-apollo.service';
-import { CustomApolloModuleConfig, CustomApolloModuleConfigName } from './custom-apollo.model';
+import { MaSc5CustomApolloModuleConfig, MaSc5CustomApolloModuleConfigName } from './custom-apollo.model';
 
 @NgModule({
   imports: [
@@ -34,12 +35,12 @@ export class MaSc5CustomApolloModule {
 
   }
 
-  static forRoot(config: CustomApolloModuleConfig): ModuleWithProviders {
+  static forRoot(config: MaSc5CustomApolloModuleConfig): ModuleWithProviders {
     return {
       ngModule: MaSc5CustomApolloModule,
       providers: [
         MaSc5CustomApolloService,
-        { provide: CustomApolloModuleConfigName, useValue: config }
+        { provide: MaSc5CustomApolloModuleConfigName, useValue: config }
       ]
     }
   }

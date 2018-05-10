@@ -3,14 +3,16 @@ import { TranslateService } from '@ngx-translate/core';
 import { NotificationsService } from 'angular2-notifications';
 import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable()
-export class Sc5UtilsService {
+export class MaSc5UtilsService {
 
   constructor(private translate: TranslateService,
               private notificationsService: NotificationsService,
               private iconRegistry: MatIconRegistry,
-              private sanitizer: DomSanitizer) { }
+              private sanitizer: DomSanitizer,
+              private cookieService: CookieService) { }
 
   private modulePrefix = 'app';
 
@@ -29,7 +31,7 @@ export class Sc5UtilsService {
   }
 
   logoutUser(timeout = 1500) {
-    //TODO: Remove cookie
+    this.cookieService.deleteAll('/');
     this.notificationsService.success(this.translate.instant("common.logout.user.notification"));
     this.redirectToModule('authentication', timeout);
   }

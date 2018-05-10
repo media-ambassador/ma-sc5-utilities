@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SelectionModel } from '@angular/cdk/collections';
 
 import { MaSc5BaseTableComponent } from '../../lib/modules/table-wrapper/base-table/base-table.component';
-import { TableSelectionEmmiter } from '../../lib/modules/table-wrapper/base-table/base-table.model';
+import { MaSc5TableSelectionEmmiter } from '../../lib/modules/table-wrapper/base-table/base-table.model';
 
 import { ApiUser } from '../../core/api-user/api-user.model';
 import { ApiUserService } from '../../core/api-user/api-user.service';
@@ -36,7 +36,7 @@ export class UserListComponent extends MaSc5BaseTableComponent<ApiUser> implemen
     this.dataSource.loadData();
   }
 
-  onSelectionChange(emiter: TableSelectionEmmiter<ApiUser>) {
+  onSelectionChange(emiter: MaSc5TableSelectionEmmiter<ApiUser>) {
     this.selection = emiter.selection;
     this.isTotal = !!emiter.total ? emiter.total : false;
   }

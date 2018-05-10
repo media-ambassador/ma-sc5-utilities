@@ -1,4 +1,4 @@
-import { CustomResponse } from "../../lib/modules/custom-apollo/custom-apollo.model";
+import { MaSc5CustomResponse } from "../../lib/modules/custom-apollo/custom-apollo.model";
 
 export type ApiUserStatus = 'Active' | 'Inactive';
 export type ApiUserEventType = 'authentication_succeded' | 'authentication_failed' | 'password_changed';
@@ -21,7 +21,7 @@ export interface ApiUser {
   events: ApiUserEvent[];
 }
 
-export type ApiGetUserResponse = CustomResponse & {
+export type ApiGetUserResponse = MaSc5CustomResponse & {
   total: number;
   items: ApiUser[];
 }

@@ -1,13 +1,13 @@
 {
-	"common.status.Active": "Aktywny",
-	"common.status.Inactive": "Nieaktywny",
-	"table.common.selectAll": "Wszystkie",
-	"table.common.selectCurrentPage": "Na tej stronie",
-	"table.common.filter": "filtruj...",
-	"table.common.selectedRows": "Zaznaczonych elementów: {{count}}",
-	"table.header.column.firstname": "imię",
-	"table.header.column.id": "login",
-	"table.header.column.lastname": "nazwisko",
-	"table.header.column.status": "status",
-	"table.common.itemsPerPage": "Elementów na stronie:"
+	"ma.sc5.common.status.Active": "Aktywny",
+	"ma.sc5.common.status.Inactive": "Nieaktywny",
+	"ma.sc5.tableWrapper.common.selectAll": "Wszystkie",
+	"ma.sc5.tableWrapper.common.selectCurrentPage": "Na tej stronie",
+	"ma.sc5.tableWrapper.common.filter": "filtruj...",
+	"ma.sc5.tableWrapper.common.selectedRows": "Zaznaczonych elementów: {{count}}",
+	"ma.sc5.tableWrapper.header.column.firstname": "imię",
+	"ma.sc5.tableWrapper.header.column.id": "login",
+	"ma.sc5.tableWrapper.header.column.lastname": "nazwisko",
+	"ma.sc5.tableWrapper.header.column.status": "status",
+	"ma.sc5.tableWrapper.pagination.itemsPerPage": "Elementów na stronie:"
 }

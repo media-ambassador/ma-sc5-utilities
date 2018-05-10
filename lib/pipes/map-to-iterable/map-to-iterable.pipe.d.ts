@@ -1,4 +1,4 @@
 import { PipeTransform } from '@angular/core';
-export declare class MapToIterablePipe implements PipeTransform {
+export declare class MaSc5MapToIterablePipe implements PipeTransform {
     transform(dictionary: any): any;
 }

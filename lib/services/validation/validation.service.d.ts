@@ -1,9 +1,9 @@
 import { FormGroup, FormControl } from '@angular/forms/src/model';
-import { IValidationMessage } from './validation.model';
-import { IResponseValidation } from '../../modules/custom-apollo/custom-apollo.model';
-export declare class ValidationService {
+import { MaSc5ValidationMessage } from './validation.model';
+import { MaSc5ResponseValidation } from '../../modules/custom-apollo/custom-apollo.model';
+export declare class MaSc5ValidationService {
     constructor();
-    handleValidation(form: FormGroup, validation: IResponseValidation[]): void;
-    setError(formControl: FormControl, messages: IValidationMessage[]): void;
+    handleValidation(form: FormGroup, validation: MaSc5ResponseValidation[]): void;
+    setError(formControl: FormControl, messages: MaSc5ValidationMessage[]): void;
     private mapValidationOption(options);
 }

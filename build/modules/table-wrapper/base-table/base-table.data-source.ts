@@ -4,14 +4,14 @@ import { Observable } from "rxjs/Observable";
 import { BehaviorSubject } from "rxjs/BehaviorSubject";
 import { catchError, finalize } from 'rxjs/operators';
 
-import { TableSearch } from "./base-table.model";
+import { MaSc5TableSearch } from "./base-table.model";
 
 import * as _ from 'lodash';
 
 export class MaSc5BaseTableDataSource<T> extends MatTableDataSource<T> {
   protected sourceSubject = new BehaviorSubject<T[]> ([]);
   protected loadingSubject = new BehaviorSubject<boolean> (false);
-  protected searchOptions: TableSearch = {};
+  protected searchOptions: MaSc5TableSearch = {};
 
   public loading$ = this.loadingSubject.asObservable();
   public total: number = 0;
@@ -29,7 +29,7 @@ export class MaSc5BaseTableDataSource<T> extends MatTableDataSource<T> {
     this.loadingSubject.complete();
   }
 
-  loadData(search: TableSearch = {}) {
+  loadData(search: MaSc5TableSearch = {}) {
     this.loadingSubject.next(true);
     this.searchOptions = _.extend(this.searchOptions, search);
   }

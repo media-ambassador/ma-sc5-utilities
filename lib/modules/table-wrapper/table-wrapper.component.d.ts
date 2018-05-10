@@ -3,18 +3,18 @@ import { MatPaginator, MatColumnDef, MatHeaderRowDef, MatRowDef, MatTable } from
 import { TranslateService } from '@ngx-translate/core';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MaSc5BaseTableDataSource } from './base-table/base-table.data-source';
-import { TableColumn, TableSelectionEmmiter } from './base-table/base-table.model';
+import { MaSc5TableColumn, MaSc5TableSelectionEmmiter } from './base-table/base-table.model';
 export declare class MaSc5TableWrapperComponent<T> implements OnInit {
     private translateService;
     header: string;
     dataSource: MaSc5BaseTableDataSource<T>;
     totalCount: number;
-    columns: TableColumn[];
+    columns: MaSc5TableColumn[];
     selectionField: string;
     pageSize: number;
     pageSizeOptions: number[];
-    columnDisplayChange: EventEmitter<TableColumn[]>;
-    selectionChange: EventEmitter<TableSelectionEmmiter<T>>;
+    columnDisplayChange: EventEmitter<MaSc5TableColumn[]>;
+    selectionChange: EventEmitter<MaSc5TableSelectionEmmiter<T>>;
     paginator: MatPaginator;
     table: MatTable<T>;
     columnDefs: QueryList<MatColumnDef>;
