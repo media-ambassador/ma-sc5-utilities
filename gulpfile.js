@@ -3,14 +3,28 @@ const inlineNg2Template = require('gulp-inline-ng2-template');
 const runSequence = require('run-sequence');
 const merge = require('gulp-merge-json');
 const clean = require('gulp-clean');
+var sass = require('node-sass');
+var autoprefixer = require('gulp-autoprefixer');
 
 const langs = ['pl', 'en'];
+
+const styleProcessor = (stylePath, ext, styleFile, callback) => {
+    if (ext[0] === '.scss') {
+        let sassObj = sass.renderSync({ file: stylePath });
+        if (sassObj && sassObj['css']){
+        styleFile = sassObj.css.toString('utf8');
+        }
+    }
+
+    return callback(null, styleFile);  
+};
 
 gulp.task('inline-build-templates', function() {
     return gulp.src(['./src/app/lib/**/*.ts'])
         .pipe(inlineNg2Template({
             target: 'es5',
-            useRelativePaths: true
+            useRelativePaths: true,
+            styleProcessor: styleProcessor
         }))
         .pipe(gulp.dest('./build'));
 });

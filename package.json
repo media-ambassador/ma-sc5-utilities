@@ -1,6 +1,6 @@
 {
   "name": "@ma_tkuchne/sc5-utilities",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Komponenty i serwisy współdzielone między mikrousługami",
   "license": "MIT",
   "scripts": {
@@ -72,6 +72,7 @@
     "codelyzer": "^4.0.1",
     "copyfiles": "^1.2.0",
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
     "gulp-clean": "^0.4.0",
     "gulp-inline-ng2-template": "^4.0.0",
     "jasmine-core": "2.8.0",
@@ -83,6 +84,7 @@
     "karma-coverage-istanbul-reporter": "^1.2.1",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "node-sass": "^4.9.0",
     "protractor": "~5.1.2",
     "run-sequence": "^2.2.1",
     "source-map-explorer": "^1.5.0",

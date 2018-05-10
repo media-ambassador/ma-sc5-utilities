@@ -1,6 +1,6 @@
 import { error } from "util";
 
-export interface ILoginIdentity {
+export interface MaSc5LoginIdentity {
   id: string;
   first_name: string;
   last_name: string;
