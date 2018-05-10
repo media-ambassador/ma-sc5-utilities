@@ -2,7 +2,7 @@ import { element, by } from 'protractor';
 import { RemindPage } from './remind.po';
 import { Utils } from '../untils.po';
 
-describe('sc5-authentication Remind', () => {
+describe('sc5-utilities Remind', () => {
   let page: RemindPage;
   let utils: Utils;
 
