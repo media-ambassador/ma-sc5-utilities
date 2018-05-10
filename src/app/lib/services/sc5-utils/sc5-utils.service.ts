@@ -9,7 +9,6 @@ import { CookieService } from 'ngx-cookie-service';
 export class MaSc5UtilsService {
 
   constructor(private translate: TranslateService,
-              private notificationsService: NotificationsService,
               private iconRegistry: MatIconRegistry,
               private sanitizer: DomSanitizer,
               private cookieService: CookieService) { }
@@ -32,7 +31,6 @@ export class MaSc5UtilsService {
 
   logoutUser(timeout = 1500) {
     this.cookieService.deleteAll('/');
-    this.notificationsService.success(this.translate.instant("common.logout.user.notification"));
     this.redirectToModule('authentication', timeout);
   }
 
