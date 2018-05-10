@@ -3,8 +3,8 @@ import { Observable } from "rxjs/Observable";
 import { BehaviorSubject } from "rxjs/BehaviorSubject";
 import { catchError, finalize } from 'rxjs/operators';
 
-import { MaSc5BaseTableDataSource } from "../../lib/modules/table-wrapper/base-table/base-table.data-source";
-import { MaSc5TableSearch } from "../../lib/modules/table-wrapper/base-table/base-table.model";
+import { MaSc5BaseTableDataSource } from "../../lib/modules/table-wrapper";
+import { MaSc5TableSearch } from "../../lib/modules/table-wrapper";
 
 import { ApiUser } from "../../core/api-user/api-user.model";
 import { ApiUserService } from "../../core/api-user/api-user.service";

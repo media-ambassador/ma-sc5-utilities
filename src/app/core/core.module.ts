@@ -4,9 +4,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { CookieService } from 'ngx-cookie-service';
 
-import { MaSc5CustomApolloModule } from '../lib/modules/custom-apollo/custom-apollo.module';
-import { MaSc5ValidationService } from '../lib/services/validation/validation.service';
-import { MaSc5UtilsService } from '../lib/services/sc5-utils/sc5-utils.service';
+import { MaSc5CustomApolloModule } from '../lib/modules/custom-apollo';
+import { MaSc5ValidationService } from '../lib/services/validation';
+import { MaSc5UtilsService } from '../lib/services/sc5-utils';
 
 import { ApiUserService } from './api-user/api-user.service';
 import { environment } from '../../environments/environment';

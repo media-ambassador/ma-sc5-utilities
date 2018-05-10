@@ -1,4 +1,4 @@
-import { MaSc5ValidationMessage } from "../../services/validation/validation.model";
+import { MaSc5ValidationMessage } from "../../services/validation";
 
 export const MaSc5CustomApolloModuleConfigName = 'customApolloModuleConfig';
 export interface MaSc5CustomApolloModuleConfig {

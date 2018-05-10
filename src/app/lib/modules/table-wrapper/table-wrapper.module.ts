@@ -5,7 +5,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 
-import { MaSc5CustomMaterialModule } from '../custom-material/custom-material.module';
+import { MaSc5CustomMaterialModule } from '../custom-material';
 
 import { MaSc5BaseTableComponent } from './base-table/base-table.component';
 import { MaSc5TableWrapperComponent } from './table-wrapper.component';

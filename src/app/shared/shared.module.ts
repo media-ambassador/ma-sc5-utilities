@@ -9,10 +9,10 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateService } from '@ngx-translate/core';
 import { SimpleNotificationsModule } from 'angular2-notifications';
 
-import { MaSc5CustomMaterialModule } from '../lib/modules/custom-material/custom-material.module';
-import { MaSc5TableWrapperModule } from '../lib/modules/table-wrapper/table-wrapper.module';
+import { MaSc5CustomMaterialModule } from '../lib/modules/custom-material';
+import { MaSc5TableWrapperModule } from '../lib/modules/table-wrapper';
 
-import { MaSc5MapToIterablePipe } from '../lib/pipes/map-to-iterable/map-to-iterable.pipe';
+import { MaSc5MapToIterablePipe } from '../lib/pipes/map-to-iterable';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");

@@ -8,7 +8,7 @@ import { InMemoryCache } from "apollo-cache-inmemory";
 import { CookieService } from 'ngx-cookie-service';
 
 import { MaSc5CustomApolloModuleConfigName, MaSc5CustomApolloModuleConfig } from "./custom-apollo.model";
-import { MaSc5UtilsService } from "../../services/sc5-utils/sc5-utils.service";
+import { MaSc5UtilsService } from "../../services/sc5-utils";
 
 @Injectable()
 export class MaSc5CustomApolloService {

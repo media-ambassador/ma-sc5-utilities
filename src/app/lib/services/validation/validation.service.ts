@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms/src/model';
 import { MaSc5ValidationMessage, MaSc5ValidationMessageOption } from './validation.model';
-import { MaSc5ResponseValidation } from '../../modules/custom-apollo/custom-apollo.model';
+import { MaSc5ResponseValidation } from '../../modules/custom-apollo';
 
 import * as _ from 'lodash';
 
