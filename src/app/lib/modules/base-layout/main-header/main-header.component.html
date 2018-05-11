@@ -1,0 +1,69 @@
+<div>
+  <div class="logo">
+    <mat-icon class="icon-logo" svgIcon="sc5-logo"></mat-icon>
+  </div>
+
+  <div class="channels">
+    <span class="mat-caption" translate="main.header.channels"></span>
+
+    <span [matMenuTriggerFor]="channelsMenu" class="dropdown-menu mat-subheading-2">
+      {{ channels[0].id }}
+      <mat-icon>keyboard_arrow_down</mat-icon>
+    </span>
+  
+    <mat-menu #channelsMenu="matMenu">
+      <button mat-menu-item *ngFor="let channel of channels">
+        {{ channel.id }}
+      </button>
+    </mat-menu>
+  </div>
+
+  <div class="app-title">
+    <span class="mat-headline" translate="main.header.title"></span>
+  </div>
+
+  <div class="helper">
+    <ul>
+      <li>
+        <a md-raised-button color="accent" [mdePopoverTriggerFor]="mainMenuPopover" [mdePopoverEnterDelay]="300" mdePopoverTriggerOn="click">
+          <mat-icon>view_module</mat-icon>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+            <mat-icon>notifications_none</mat-icon>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+            <mat-icon>help_circle</mat-icon>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="user">
+    <span [matMenuTriggerFor]="userMenu" class="dropdown-menu mat-body-1">
+        tomasz.kuchne@mediaambassador.com
+      <mat-icon>keyboard_arrow_down</mat-icon>
+    </span>
+
+    <mat-menu #userMenu="matMenu">
+      <button mat-menu-item translate="main.header.user.menu.edit"></button>
+      <button mat-menu-item translate="main.header.user.menu.logout" (click)="sc5UtilsService.logoutUser()"></button>
+    </mat-menu>
+  </div>
+</div>
+
+<mde-popover #mainMenuPopover="mdePopover" [mdePopoverOverlapTrigger]="false">
+  <div class="popover-content services-popover-content">
+    <ul>
+      <li *ngFor="let service of services">
+        <a href="{{ sc5UtilsService.getModuleUrl(service) }}">
+          <mat-icon class="icon-logo" svgIcon="{{ 'icon-' + service }}"></mat-icon>
+          <span>{{ 'service.' + service | translate }}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</mde-popover>

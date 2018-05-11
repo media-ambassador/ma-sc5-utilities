@@ -1,0 +1,42 @@
+@import '../../../../styles/lib';
+
+:host {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  background: white;
+
+  span {color: mat-color($mat-grey, 600); }
+
+  a {
+    color: $black-87-opacity;
+    text-decoration: none;
+  }
+
+  > div {
+    display: flex;
+    flex: 1;
+
+    &:nth-child(1) {
+      align-items: center;
+
+      .icon-logo { margin-right: 10px; }
+      a { margin-left: 10px; }
+    }
+
+    &:nth-child(2) {
+      justify-content: flex-end;
+
+      a {
+        margin-left: 10px;
+
+        &:nth-child(2)::after {
+          margin-left: 10px;
+          content: "/";
+          color: mat-color($mat-grey, 600);
+        }
+      }
+    }
+  }
+}
