@@ -5,7 +5,7 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { MaSc5CustomMaterialModule } from '../custom-material';
 
-import { MaSc5BaseLayout } from './base.layout';
+import { BaseLayoutComponent } from './base-layout.component';
 import { MaSc5MainHeaderComponent } from './main-header/main-header.component';
 import { MaSc5MainMenuComponent } from './main-menu/main-menu.component';
 import { MaSc5MainFooterComponent } from './main-footer/main-footer.component';
@@ -20,18 +20,16 @@ import { MaSc5MainFooterComponent } from './main-footer/main-footer.component';
     MaSc5CustomMaterialModule
   ],
   declarations: [
-    MaSc5BaseLayout,
-
+    BaseLayoutComponent,
     MaSc5MainHeaderComponent,
     MaSc5MainMenuComponent,
     MaSc5MainFooterComponent
   ],
   exports: [
-    MaSc5BaseLayout,
-
+    BaseLayoutComponent,
     MaSc5MainHeaderComponent,
     MaSc5MainMenuComponent,
     MaSc5MainFooterComponent
   ]
 })
-export class MaSc5BaseLayoutModule { }
+export class BaseLayoutModule { }

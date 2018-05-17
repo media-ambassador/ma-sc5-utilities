@@ -15,9 +15,9 @@ export function appInitializerFactory(translate: TranslateService, injector: Inj
   return () => new Promise<any>((resolve: any) => {
     const locationInitialized = injector.get(LOCATION_INITIALIZED, Promise.resolve(null));
     locationInitialized.then(() => {
-      const langToSet = 'pl'
+      const langToSet = 'pl';
       translate.setDefaultLang('pl');
-      translate.use(langToSet).subscribe(() => 
+      translate.use(langToSet).subscribe(() =>
         success => {
           console.log(success);
         },
