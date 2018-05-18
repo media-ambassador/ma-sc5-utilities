@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { SelectionModel } from '@angular/cdk/collections';
 
-import { MaSc5BaseTableComponent } from '../../lib/modules/table-wrapper';
-import { MaSc5TableSelectionEmmiter } from '../../lib/modules/table-wrapper';
+import { MaSc5BaseTableComponent } from '../../../lib/modules/table-wrapper';
+import { MaSc5TableSelectionEmmiter } from '../../../lib/modules/table-wrapper';
 
-import { ApiUser } from '../../core/api-user/api-user.model';
-import { ApiUserService } from '../../core/api-user/api-user.service';
+import { ApiUser } from '../../../core/api-user/api-user.model';
+import { ApiUserService } from '../../../core/api-user/api-user.service';
 import { UsersDataSource } from './users-list-data-source';
 
 @Component({

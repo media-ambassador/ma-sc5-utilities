@@ -1,0 +1,20 @@
+<header>
+  <ma-sc5-main-header [channels]="identity.channels"
+                      [services]="identity.services"
+                      [userId]="identity.id"
+                      [pageTitle]="pageTitle"
+                      [defaultChannel]="identity.default_channel">
+  </ma-sc5-main-header>
+
+  <ma-sc5-main-menu [menuItems]="menuItems"></ma-sc5-main-menu>
+</header>
+
+<section>
+  <perfect-scrollbar [config]="config">
+    <router-outlet (activate)="onViewActive($event)"></router-outlet>
+  </perfect-scrollbar>
+</section>
+
+<footer>
+  <ma-sc5-main-footer></ma-sc5-main-footer>
+</footer>

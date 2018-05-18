@@ -1,4 +1,4 @@
-@import 'lib';
+@import '../lib';
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -56,6 +56,9 @@ body {
         display: flex;
         flex-flow: row wrap;
         width: 100%;
+        margin: 0;
+        padding: 0;
+        list-style: none;
 
         li {
           width: 100px;

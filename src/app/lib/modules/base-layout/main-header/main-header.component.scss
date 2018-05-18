@@ -1,0 +1,91 @@
+@import '../../../../../styles/lib';
+
+:host {
+  $row-gap: 20px;
+
+  > div {
+    display: grid;
+    grid-gap: 0;
+    grid-template-columns: 65px auto 1fr auto auto;
+    grid-template-rows: 65px;
+    grid-template-areas:
+      "logo channels title helpers user";
+
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 $row-gap;
+
+      &:last-child { padding-left: 0; }
+
+      .dropdown-menu {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        cursor: pointer;
+
+        .mat-icon {
+          margin-left: 3px;
+          @include size(15px);
+          font-size: 15px;
+          line-height: 15px;
+        }
+      }
+
+      &.logo {
+        grid-area: logo;
+        border-right: 1px solid mat-color($mat-grey, 200);
+      }
+
+      &.channels {
+        grid-area: channels;
+        border-right: 1px solid mat-color($mat-grey, 200);
+
+        button {
+          margin-bottom: 0;
+        }
+      }
+
+      &.app-title {
+        grid-area: title;
+        span { margin: 0; }
+      }
+
+      &.helper {
+        grid-area: helpers;
+
+        ul {
+          display: flex;
+          align-items: center;
+          margin: 0;
+          padding: 0;
+          list-style: none;
+
+          li {
+            margin-left: 10px;
+
+            a {
+              display: block;
+              padding: 5px;
+              cursor: pointer;
+              color: mat-color($mat-grey, 600);
+
+              &:hover { color: $black-87-opacity; }
+            }
+          }
+        }
+      }
+
+      &.user {
+        grid-area: user;
+
+        span {
+          color: mat-color($mat-grey, 600);
+          &:hover { color: $black-87-opacity; }
+        }
+
+      }
+    }
+  }
+}

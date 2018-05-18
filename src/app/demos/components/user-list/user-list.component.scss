@@ -1,0 +1,18 @@
+@import '../../../../styles/lib';
+
+:host {
+  display: block;
+  position: relative;
+
+  sc5-table-rows-selection {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 5;
+  }
+
+  ma-sc5-table-wrapper {
+    @include set-table-height(420px);
+  }
+
+}

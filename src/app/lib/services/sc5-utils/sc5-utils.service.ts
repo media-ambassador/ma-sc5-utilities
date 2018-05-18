@@ -17,12 +17,12 @@ export class MaSc5UtilsService {
 
   redirectToModule(moduleName: string, timeout = 0) {
     setTimeout(() => {
-      window.location.href = `${window.location.protocol}//${window.location.host}/${moduleName}/${this.modulePrefix}/`; 
+      window.location.href = `${window.location.protocol}//${window.location.host}/${moduleName}/${this.modulePrefix}/`;
     }, timeout);
   }
 
   getModuleUrl(moduleName: string) {
-    return `${window.location.protocol}//${window.location.host}/${moduleName}/${this.modulePrefix}/`; 
+    return `${window.location.protocol}//${window.location.host}/${moduleName}/${this.modulePrefix}/`;
   }
 
   registerIcon(name: string, filePath: string) {
