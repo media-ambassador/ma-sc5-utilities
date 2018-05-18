@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BaseLayoutComponent } from './base-layout.component';
+import { MaSc5BaseLayout } from './base.layout';
 
 describe('BaseLayoutComponent', () => {
-  let component: BaseLayoutComponent;
-  let fixture: ComponentFixture<BaseLayoutComponent>;
+  let component: MaSc5BaseLayout;
+  let fixture: ComponentFixture<MaSc5BaseLayout>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BaseLayoutComponent ]
+      declarations: [ MaSc5BaseLayout ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BaseLayoutComponent);
+    fixture = TestBed.createComponent(MaSc5BaseLayout);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

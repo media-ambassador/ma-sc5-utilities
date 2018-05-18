@@ -22,6 +22,7 @@
 	"ma.sc5.tableWrapper.header.column.id": "login",
 	"ma.sc5.tableWrapper.header.column.lastname": "nazwisko",
 	"ma.sc5.tableWrapper.header.column.status": "status",
-  "ma.sc5.tableWrapper.pagination.itemsPerPage": "Elementów na stronie:",
-  "demos.home.pageTitle": "Testowa strona"
+	"ma.sc5.tableWrapper.pagination.itemsPerPage": "Elementów na stronie:",
+	"demos.home.pageTitle": "Testowa strona",
+	"home.userList.header": "Testowa lista użytkowników"
 }

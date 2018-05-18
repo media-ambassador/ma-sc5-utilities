@@ -6,8 +6,8 @@ import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { MaSc5LoginIdentity } from '../../common';
 import { MaSc5MenuItem } from '../../common/common.model';
 
-import { environment } from '../../../../environments/environment';
 import { MaSc5BaseLayoutView } from './base-layout.model';
+import { MaSc5UtilsService } from '../../services/sc5-utils';
 
 @Component({
   selector: 'ma-sc5-base-layout',
@@ -26,13 +26,17 @@ export class MaSc5BaseLayout implements OnInit {
   };
 
   constructor(private route: ActivatedRoute,
-              private cookieService: CookieService) { }
+              private cookieService: CookieService,
+              private sc5UtilsService: MaSc5UtilsService) { }
 
   ngOnInit() {
-    this.identity = JSON.parse(this.cookieService.get(environment.identityKeyName)) as MaSc5LoginIdentity;
+    this.route.data.subscribe(data => {
+      if (!data && !data.identity) {
+        this.sc5UtilsService.logoutUser();
+      }
 
-    this.identity.channels = !!this.identity.channels ? this.identity.channels : [];
-    this.identity.services = !!this.identity.services ? this.identity.services : [];
+      this.identity = data.identity;
+    });
   }
 
   onViewActive(component: MaSc5BaseLayoutView) {

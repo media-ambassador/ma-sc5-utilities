@@ -42,6 +42,6 @@ export class MaSc5CustomApolloModule {
         MaSc5CustomApolloService,
         { provide: MaSc5CustomApolloModuleConfigName, useValue: config }
       ]
-    }
+    };
   }
 }

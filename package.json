@@ -1,6 +1,6 @@
 {
   "name": "@ma_tkuchne/sc5-utilities",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Komponenty i serwisy współdzielone między mikrousługami",
   "license": "MIT",
   "scripts": {
@@ -28,7 +28,7 @@
     "url": "https://github.com/media-ambassador/ma-sc5-utilities/issues"
   },
   "homepage": "https://github.com/media-ambassador/ma-sc5-utilities#readme",
-  
+
   "peerDependencies": {
     "@angular/animations": "^5.2.0",
     "@angular/cdk": "^5.2.1",
