@@ -15,7 +15,7 @@ import { MaSc5TableWrapperModule } from '../lib/modules/table-wrapper';
 import { MaSc5MapToIterablePipe } from '../lib/pipes/map-to-iterable';
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({

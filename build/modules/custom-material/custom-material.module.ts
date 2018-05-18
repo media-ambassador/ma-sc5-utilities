@@ -72,7 +72,7 @@ import {MdePopoverModule} from '@material-extended/mde';
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    
+
     MdePopoverModule
   ]
 })

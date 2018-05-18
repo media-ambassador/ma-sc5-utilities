@@ -6,5 +6,5 @@ export interface MaSc5ValidationMessageOption {
 export interface MaSc5ValidationMessage {
   name: string;
   template: string;
-  options: MaSc5ValidationMessageOption[]
+  options: MaSc5ValidationMessageOption[];
 }

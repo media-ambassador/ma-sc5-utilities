@@ -9,6 +9,5 @@ export {
   MaSc5TableSearchSort,
   MaSc5TableSearch,
   MaSc5TableColumn,
-  MaSc5TableSelectionEmmiter
+  MaSc5TableSelectionEmitter
 } from './base-table/base-table.model';
-

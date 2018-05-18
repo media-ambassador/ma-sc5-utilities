@@ -5,5 +5,5 @@ export declare class MaSc5TableSelectedRowsComponent implements OnInit {
     isTotal: boolean;
     constructor();
     ngOnInit(): void;
-    getItemsCouns(): number;
+    getItemsCounts(): number;
 }

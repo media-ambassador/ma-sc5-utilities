@@ -12,28 +12,28 @@ export class MaSc5ValidationService {
 
   handleValidation(form: FormGroup, validation: MaSc5ResponseValidation[]) {
     _.forEach(validation, item => {
-      var formControl = form.controls[item.field] as FormControl;
+      const formControl = form.controls[item.field] as FormControl;
       this.setError(formControl, item.messages);
     });
   }
 
   setError(formControl: FormControl, messages: MaSc5ValidationMessage[]) {
-    var errors: any = {};
+    const errors: any = {};
     _.forEach(messages, message => {
       errors[message.name] = {
         key: `validation.error.${message.name}`,
         variables: this.mapValidationOption(message.options)
-      }
+      };
     });
 
     formControl.setErrors(errors);
   }
 
   private mapValidationOption(options: MaSc5ValidationMessageOption[]) {
-    var variables: any = {};
+    const variables: any = {};
     _.forEach(options, option => {
-      variables[option.name] = option.value
-    })
+      variables[option.name] = option.value;
+    });
 
     return variables;
   }

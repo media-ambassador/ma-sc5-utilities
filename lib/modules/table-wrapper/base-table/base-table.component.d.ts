@@ -1,8 +1,8 @@
-import { OnInit } from '@angular/core';
+import { OnInit, AfterViewInit } from '@angular/core';
 import { MatSort } from '@angular/material';
-import { MaSc5TableColumn } from "./base-table.model";
+import { MaSc5TableColumn } from './base-table.model';
 import { MaSc5BaseTableDataSource } from './base-table.data-source';
-export declare class MaSc5BaseTableComponent<T> implements OnInit {
+export declare class MaSc5BaseTableComponent<T> implements OnInit, AfterViewInit {
     tableSort: MatSort;
     dataSource: MaSc5BaseTableDataSource<T>;
     columns: MaSc5TableColumn[];

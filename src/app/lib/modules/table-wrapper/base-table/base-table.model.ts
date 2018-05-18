@@ -1,4 +1,4 @@
-import { SelectionModel } from "@angular/cdk/collections";
+import { SelectionModel } from '@angular/cdk/collections';
 
 export interface MaSc5TableSearchSort {
   column: string;
@@ -18,7 +18,7 @@ export interface MaSc5TableColumn {
   disabled: boolean;
 }
 
-export interface MaSc5TableSelectionEmmiter<T> {
+export interface MaSc5TableSelectionEmitter<T> {
   selection: SelectionModel<T>;
   total?: boolean;
 }

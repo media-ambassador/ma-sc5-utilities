@@ -1,8 +1,8 @@
-import { Apollo } from "apollo-angular";
-import { HttpLink } from "apollo-angular-link-http";
+import { Apollo } from 'apollo-angular';
+import { HttpLink } from 'apollo-angular-link-http';
 import { CookieService } from 'ngx-cookie-service';
-import { MaSc5CustomApolloModuleConfig } from "./custom-apollo.model";
-import { MaSc5UtilsService } from "../../services/sc5-utils";
+import { MaSc5CustomApolloModuleConfig } from './custom-apollo.model';
+import { MaSc5UtilsService } from '../../services/sc5-utils';
 export declare class MaSc5CustomApolloService {
     private config;
     private apollo;

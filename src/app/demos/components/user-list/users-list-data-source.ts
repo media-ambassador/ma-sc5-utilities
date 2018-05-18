@@ -25,7 +25,7 @@ export class UsersDataSource extends MaSc5BaseTableDataSource<ApiUser> {
         this.loadingSubject.next(false);
 
         if (!userList['items']) {
-          this.clearDataSoruce();
+          this.clearDataSource();
         }
 
         this.sourceSubject.next(userList['items']);

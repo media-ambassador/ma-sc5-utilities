@@ -15,7 +15,7 @@ export class MaSc5TableSelectedRowsComponent implements OnInit {
   ngOnInit() {
   }
 
-  getItemsCouns() {
+  getItemsCounts() {
     return this.isTotal ? this.totalCount : this.items;
   }
 }
