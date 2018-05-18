@@ -7,8 +7,11 @@ import { MaSc5UtilsService } from '../../../services/sc5-utils';
   styleUrls: ['./main-header.component.scss']
 })
 export class MaSc5MainHeaderComponent implements OnInit {
-  @Input() channels: any[]//ApiChannel[];
+  @Input() channels: string[];
+  @Input() defaultChannel: string;
   @Input() services: string[];
+  @Input() userId: string;
+  @Input() pageTitle: string;
 
   constructor(public sc5UtilsService: MaSc5UtilsService) { }
 

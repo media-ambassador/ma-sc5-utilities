@@ -4,7 +4,7 @@
   $row-gap: 20px;
 
   > div {
-    display: grid; 
+    display: grid;
     grid-gap: 0;
     grid-template-columns: 65px auto 1fr auto auto;
     grid-template-rows: 65px;
@@ -37,7 +37,7 @@
         grid-area: logo;
         border-right: 1px solid mat-color($mat-grey, 200);
       }
-      
+
       &.channels {
         grid-area: channels;
         border-right: 1px solid mat-color($mat-grey, 200);
@@ -46,18 +46,21 @@
           margin-bottom: 0;
         }
       }
-      
+
       &.app-title {
         grid-area: title;
         span { margin: 0; }
       }
-      
+
       &.helper {
         grid-area: helpers;
 
         ul {
           display: flex;
           align-items: center;
+          margin: 0;
+          padding: 0;
+          list-style: none;
 
           li {
             margin-left: 10px;
@@ -73,7 +76,7 @@
           }
         }
       }
-      
+
       &.user {
         grid-area: user;
 

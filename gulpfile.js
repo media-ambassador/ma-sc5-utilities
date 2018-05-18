@@ -16,7 +16,7 @@ const styleProcessor = (stylePath, ext, styleFile, callback) => {
         }
     }
 
-    return callback(null, styleFile);  
+    return callback(null, styleFile);
 };
 
 gulp.task('inline-build-templates', function() {
@@ -55,7 +55,7 @@ gulp.task('merge-lib-i18n', ['copy-lib-i18n'], function() {
                     if (parsedJson.someValue) {
                         delete parsedJson.otherValue;
                     }
-        
+
                     return parsedJson;
                 },
             }))
@@ -63,7 +63,7 @@ gulp.task('merge-lib-i18n', ['copy-lib-i18n'], function() {
     });
 });
 
-gulp.task('merge-i18n-from-lib', function() {
+gulp.task('merge-i18n-from-lib', ['merge-lib-i18n'], function() {
     return langs.forEach(lang => {
         gulp.src(['./lib/i18n/' + lang + '.json', './src/assets/i18n/' + lang + '.json'])
             .pipe(merge({
@@ -72,7 +72,7 @@ gulp.task('merge-i18n-from-lib', function() {
                     if (parsedJson.someValue) {
                         delete parsedJson.otherValue;
                     }
-        
+
                     return parsedJson;
                 },
             }))

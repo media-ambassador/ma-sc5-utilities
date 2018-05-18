@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 
 import { MaSc5CustomMaterialModule } from '../custom-material';
 
@@ -16,6 +17,7 @@ import { MaSc5MainFooterComponent } from './main-footer/main-footer.component';
     CommonModule,
     RouterModule,
     TranslateModule,
+    PerfectScrollbarModule,
 
     MaSc5CustomMaterialModule
   ],

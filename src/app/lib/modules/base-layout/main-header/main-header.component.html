@@ -4,22 +4,24 @@
   </div>
 
   <div class="channels">
-    <span class="mat-caption" translate="main.header.channels"></span>
+    <span class="mat-caption" translate="ma.sc5.main.header.channels"></span>
 
     <span [matMenuTriggerFor]="channelsMenu" class="dropdown-menu mat-subheading-2">
-      {{ channels[0].id }}
+      {{ defaultChannel }}
       <mat-icon>keyboard_arrow_down</mat-icon>
     </span>
-  
+
     <mat-menu #channelsMenu="matMenu">
       <button mat-menu-item *ngFor="let channel of channels">
-        {{ channel.id }}
+        {{ channel }}
       </button>
     </mat-menu>
   </div>
 
   <div class="app-title">
-    <span class="mat-headline" translate="main.header.title"></span>
+    <span class="mat-headline">
+      {{ pageTitle | translate }}
+    </span>
   </div>
 
   <div class="helper">
@@ -44,13 +46,17 @@
 
   <div class="user">
     <span [matMenuTriggerFor]="userMenu" class="dropdown-menu mat-body-1">
-        tomasz.kuchne@mediaambassador.com
+        {{ userId }}
       <mat-icon>keyboard_arrow_down</mat-icon>
     </span>
 
     <mat-menu #userMenu="matMenu">
-      <button mat-menu-item translate="main.header.user.menu.edit"></button>
-      <button mat-menu-item translate="main.header.user.menu.logout" (click)="sc5UtilsService.logoutUser()"></button>
+      <button mat-menu-item >
+        {{ 'ma.sc5.main.header.menu.edit' | translate}}
+      </button>
+      <button mat-menu-item (click)="sc5UtilsService.logoutUser()">
+        {{ 'ma.sc5.main.header.menu.logout' | translate }}
+      </button>
     </mat-menu>
   </div>
 </div>
@@ -61,7 +67,7 @@
       <li *ngFor="let service of services">
         <a href="{{ sc5UtilsService.getModuleUrl(service) }}">
           <mat-icon class="icon-logo" svgIcon="{{ 'icon-' + service }}"></mat-icon>
-          <span>{{ 'service.' + service | translate }}</span>
+          <span>{{ 'ma.sc5.service.' + service | translate }}</span>
         </a>
       </li>
     </ul>

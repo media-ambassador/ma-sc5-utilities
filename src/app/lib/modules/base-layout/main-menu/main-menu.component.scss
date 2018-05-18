@@ -3,7 +3,9 @@
 :host {
   ul {
     display: flex;
+    margin: 0;
     padding: 0 15px;
+    list-style: none;
 
     li a {
       position: relative;
@@ -16,7 +18,7 @@
       &:hover { color: $black-87-opacity; }
       &.active {
         color: $black-87-opacity;
-        
+
         &::after {
           position: absolute;
           left: 0;

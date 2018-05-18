@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { MaSc5MenuItem } from '../../../common/common.model';
 
 @Component({
   selector: 'ma-sc5-main-menu',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-menu.component.scss']
 })
 export class MaSc5MainMenuComponent implements OnInit {
+  @Input() menuItems: MaSc5MenuItem[];
 
   constructor() { }
 
