@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { NgxSmartModalModule } from 'ngx-smart-modal';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -25,6 +26,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     FormsModule,
     RouterModule,
     ReactiveFormsModule,
+    NgxSmartModalModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -45,6 +47,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     FormsModule,
     ReactiveFormsModule,
     TranslateModule,
+    NgxSmartModalModule,
 
     MaSc5CustomMaterialModule,
     MaSc5TableWrapperModule,

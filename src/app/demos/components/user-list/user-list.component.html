@@ -56,8 +56,6 @@
 
 <ma-sc5-details-panel [headerTitle]="'Edytuj element'">
   <ng-container *ngIf="selectedUser">
-    <mat-card>
-      {{ selectedUser.id }}
-    </mat-card>
+    <ma-sc5-user-details [user]="selectedUser"></ma-sc5-user-details>
   </ng-container>
 </ma-sc5-details-panel>

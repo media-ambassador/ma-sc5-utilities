@@ -28,7 +28,6 @@
     "url": "https://github.com/media-ambassador/ma-sc5-utilities/issues"
   },
   "homepage": "https://github.com/media-ambassador/ma-sc5-utilities#readme",
-
   "peerDependencies": {
     "@angular/animations": "^5.2.0",
     "@angular/cdk": "^5.2.1",
@@ -58,6 +57,7 @@
     "lodash": "^4.17.4",
     "ngx-cookie-service": "^1.0.10",
     "ngx-perfect-scrollbar": "^5.3.5",
+    "ngx-smart-modal": "^6.0.0",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
   },
@@ -90,6 +90,7 @@
     "lodash": "^4.17.4",
     "ngx-cookie-service": "^1.0.10",
     "ngx-perfect-scrollbar": "^5.3.5",
+    "ngx-smart-modal": "^6.0.0",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
   },

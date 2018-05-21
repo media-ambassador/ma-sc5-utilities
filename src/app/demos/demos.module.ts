@@ -5,6 +5,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 import { DemosBaseLayoutResolve } from './demos-base-layout.resolve';
+import { UserDetailsComponent } from './components/user-details/user-details.component';
+import { UserEditNameFormComponent } from './components/user-edit-name-form/user-edit-name-form.component';
 
 @NgModule({
   imports: [
@@ -16,7 +18,7 @@ import { DemosBaseLayoutResolve } from './demos-base-layout.resolve';
     HomeModule
   ],
   declarations: [
-  ],
+  UserEditNameFormComponent],
   exports: [
   ],
   providers: [
