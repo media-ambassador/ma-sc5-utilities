@@ -1,0 +1,67 @@
+@import '../../../../styles/lib';
+
+:host {
+  $panel-header-height: 65px;
+  $box-shadow: inset 0px 0px 15px -1px rgba(117,117,117,0.4);
+
+  display: none;
+  position: fixed;
+  justify-content: flex-end;
+  top: $header-height;
+  left: 0;
+  width: 100%;
+  height: calc(#{$layout-content-height} + #{$layout-content-gap * 2});
+  z-index: 5;
+  background: rgba(0, 0, 0, .5);
+
+  &.open {
+    display: flex;
+  }
+
+  .panel-wrap {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-width: 40%;
+    max-width: 700px;
+    background: mat-color($mat-grey, 50);
+    box-shadow: $box-shadow;
+
+    > header {
+      display: flex;
+      padding: 0 $layout-content-gap;
+      height: $panel-header-height;
+      min-height: $panel-header-height;
+      background: mat-color($mat-orange, 600);
+      color: white;
+      align-items: center;
+
+      > .header-title {
+        flex: 1;
+        margin: 0;
+
+      }
+
+      > .close-button {
+        min-width: 30px;
+        max-width: 30px;
+        padding: 0;
+        margin: 0;
+      }
+    }
+
+    > .panel-content {
+      flex: 1;
+      width: 100%;
+
+      > perfect-scrollbar {
+        width: 100%;
+        max-height: calc(#{$layout-content-height} - 7px - #{$layout-content-gap});
+
+        &::ng-deep .ps-content {
+          padding: $layout-content-gap;
+        }
+      }
+    }
+  }
+}

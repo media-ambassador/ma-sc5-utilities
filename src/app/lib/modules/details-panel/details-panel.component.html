@@ -1,0 +1,17 @@
+<section class="panel-wrap" *ngIf="isOpen">
+  <header>
+    <span class="mat-title header-title">
+        {{ headerTitle | translate }}
+    </span>
+
+    <button mat-button class="close-button" (click)="close()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </header>
+
+  <section class="panel-content">
+    <perfect-scrollbar>
+      <ng-content></ng-content>
+    </perfect-scrollbar>
+  </section>
+</section>

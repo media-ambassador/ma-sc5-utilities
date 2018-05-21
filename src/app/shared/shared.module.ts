@@ -13,6 +13,7 @@ import { MaSc5CustomMaterialModule } from '../lib/modules/custom-material';
 import { MaSc5TableWrapperModule } from '../lib/modules/table-wrapper';
 
 import { MaSc5MapToIterablePipe } from '../lib/pipes/map-to-iterable';
+import { MaSc5DetailsPanelModule } from '../lib/modules/details-panel';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -34,7 +35,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     SimpleNotificationsModule.forRoot(),
 
     MaSc5CustomMaterialModule,
-    MaSc5TableWrapperModule
+    MaSc5TableWrapperModule,
+    MaSc5DetailsPanelModule
   ],
   declarations: [
     MaSc5MapToIterablePipe,
@@ -46,6 +48,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 
     MaSc5CustomMaterialModule,
     MaSc5TableWrapperModule,
+    MaSc5DetailsPanelModule,
 
     MaSc5MapToIterablePipe,
   ]

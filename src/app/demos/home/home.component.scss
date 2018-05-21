@@ -1,0 +1,8 @@
+:host {
+  ma-sc5-details-panel {
+    mat-card {
+      margin-bottom: 25px;
+      &:last-of-type { margin-bottom: 0; }
+    }
+  }
+}
