@@ -46,7 +46,6 @@ export class UserListComponent extends MaSc5BaseTableComponent<ApiUser> implemen
   }
 
   showDetails(user: ApiUser) {
-    console.log(user);
     this.selectedUser = user;
     this.detailsPanel.open();
   }

@@ -1,1 +1,0 @@
-[{"__symbolic":"module","version":4,"metadata":{},"exports":[{"from":"./validation.service","export":["MaSc5ValidationService"]},{"from":"./validation.model","export":["MaSc5ValidationMessageOption","MaSc5ValidationMessage"]}]}]

@@ -1,6 +1,6 @@
 <mat-card>
 {{ user.id }}
-<button click="editEmail()">Edytuj</button>
+<button (click)="showEditModal('userNameEdit')">Edytuj</button>
 </mat-card>
 
 <mat-card>
@@ -13,4 +13,13 @@
 
 <mat-card>
 {{ user.status }}
+<button (click)="showEditModal('userStatusEdit')">Edytuj</button>
 </mat-card>
+
+<ma-sc5-edit-element-modal [identifier]="'userNameEdit'">
+	<ma-sc5-user-edit-name-form></ma-sc5-user-edit-name-form>
+</ma-sc5-edit-element-modal>
+
+<ma-sc5-edit-element-modal [identifier]="'userStatusEdit'">
+	<ma-sc5-user-edit-status-form></ma-sc5-user-edit-status-form>
+</ma-sc5-edit-element-modal>

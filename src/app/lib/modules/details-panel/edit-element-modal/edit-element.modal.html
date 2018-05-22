@@ -1,3 +1,10 @@
-<ngx-smart-modal [identifier]="'myModal'">
-  Test
+<ngx-smart-modal [identifier]="identifier">
+
+  <header>
+    <button mat-button (click)="closeModal()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </header>
+
+  <ng-content></ng-content>
 </ngx-smart-modal>

@@ -1,0 +1,5 @@
+@import '../../../node_modules/ngx-smart-modal/ngx-smart-modal.scss';
+
+ngx-smart-modal {
+	.nsm-dialog-btn-close { display: none !important; }
+}

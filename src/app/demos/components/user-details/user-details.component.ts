@@ -1,3 +1,4 @@
+import { NgxSmartModalService } from 'ngx-smart-modal';
 import { Component, OnInit, Input } from '@angular/core';
 import { ApiUser } from '../../../core/api-user/api-user.model';
 
@@ -9,13 +10,13 @@ import { ApiUser } from '../../../core/api-user/api-user.model';
 export class UserDetailsComponent implements OnInit {
   @Input() user: ApiUser;
 
-  constructor() { }
+  constructor(private ngxSmartModalService: NgxSmartModalService) { }
 
   ngOnInit() {
   }
 
-  editEmail() {
-    console.log('edytuje');
+  showEditModal(name: string) {
+    this.ngxSmartModalService.getModal(name).open();
   }
 
 }
