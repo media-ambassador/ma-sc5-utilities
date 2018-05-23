@@ -1,5 +1,29 @@
+@import '../lib';
+
 @import '../../../node_modules/ngx-smart-modal/ngx-smart-modal.scss';
 
-ngx-smart-modal {
-	.nsm-dialog-btn-close { display: none !important; }
+body.dialog-open ngx-smart-modal {
+  display: none;
+  position: fixed;
+  top: $header-height;
+  left: 0;
+  width: 100%;
+  height: calc(#{$layout-content-height} + #{$layout-content-gap * 2});
+  z-index: 5;
+
+  &.open { display: block; }
+
+  > .overlay.nsm-overlay-open {
+    top: $header-height;
+    width: 100%;
+    height: calc(#{$layout-content-height} + #{$layout-content-gap * 2});
+  }
+
+  .nsm-dialog {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .nsm-dialog-btn-close { display: none !important; }
 }

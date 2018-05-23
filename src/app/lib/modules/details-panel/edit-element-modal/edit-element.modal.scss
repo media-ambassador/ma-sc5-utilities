@@ -1,0 +1,59 @@
+@import '../../../../../styles/lib';
+
+:host {
+  $panel-header-height: 65px;
+  $panel-footer-height: 52px;
+
+  > ngx-smart-modal section {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    > header {
+      display: flex;
+      padding: 0 $layout-content-gap;
+      height: $panel-header-height;
+      min-height: $panel-header-height;
+      background: mat-color($mat-orange, 600);
+      color: white;
+      align-items: center;
+
+      > .header-title {
+        flex: 1;
+        margin: 0;
+
+      }
+
+      > .close-button {
+        min-width: 30px;
+        max-width: 30px;
+        padding: 0;
+        margin: 0;
+      }
+    }
+
+    > .modal-content {
+      flex: 1;
+      width: 100%;
+      padding: $layout-content-gap;
+    }
+
+    footer {
+      display: flex;
+      justify-content: flex-end;
+      height: $panel-footer-height - 20px;
+      min-height: $panel-footer-height;
+      border-top: 1px solid mat-color($mat-grey, 300);
+      padding: 8px;
+
+      .mat-button {
+        color: mat-color($mat-orange, 600);
+        text-transform: uppercase;
+        margin-left: 8px;
+
+        &:first-of-type { margin-left: 0; }
+        &[disabled] { color: mat-color($mat-grey, 500); }
+      }
+    }
+  }
+}

@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostBinding } from '@angular/core';
 import { NgxSmartModalService } from 'ngx-smart-modal';
+import { MaSc5DetailsPanelService } from '../details-panel.service';
 
 @Component({
   selector: 'ma-sc5-edit-element-modal',
@@ -8,17 +9,33 @@ import { NgxSmartModalService } from 'ngx-smart-modal';
 })
 export class MaSc5EditElementModal implements OnInit {
   @Input() identifier: string;
+  @Input() modalTitle: string;
 
-  constructor(private ngxSmartModalService: NgxSmartModalService) { }
+  @HostBinding('class.open') isOpen = false;
+
+  constructor(private ngxSmartModalService: NgxSmartModalService,
+              private maSc5DetailsPanelService: MaSc5DetailsPanelService) { }
 
   ngOnInit() {
     if (!this.identifier) {
-      throw new Error(('Identifier is undefinied'));
+      throw new Error(('Edit modal identifier is undefined'));
     }
+  }
+
+  show() {
+    this.isOpen = true;
+  }
+
+  close() {
+    this.isOpen = false;
   }
 
   closeModal() {
     this.ngxSmartModalService.getModal(this.identifier).close();
+  }
+
+  saveData() {
+    this.maSc5DetailsPanelService.saveElementEditForm(this.identifier);
   }
 
 }

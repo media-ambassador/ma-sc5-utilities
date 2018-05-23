@@ -10,6 +10,8 @@ import { ApiUser } from '../../../core/api-user/api-user.model';
 export class UserDetailsComponent implements OnInit {
   @Input() user: ApiUser;
 
+  readonly userNameEdit = 'userNameEdit';
+
   constructor(private ngxSmartModalService: NgxSmartModalService) { }
 
   ngOnInit() {
