@@ -1,0 +1,1 @@
+[{"__symbolic":"module","version":4,"metadata":{},"exports":[{"from":"./details-panel.module","export":["MaSc5DetailsPanelModule"]},{"from":"./details-panel.component","export":["MaSc5DetailsPanelComponent"]},{"from":"./edit-element-modal/edit-element.modal","export":["MaSc5EditElementModal"]},{"from":"./base-edit-form","export":["MaSc5BaseEditForm"]}]}]

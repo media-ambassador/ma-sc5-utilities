@@ -34,6 +34,10 @@ export class MaSc5BaseTableDataSource<T> extends MatTableDataSource<T> {
     this.searchOptions = _.extend(this.searchOptions, search);
   }
 
+  refreshData() {
+    this.loadingSubject.next(true);
+  }
+
   protected clearDataSource() {
     this.sourceSubject.next([]);
     this.total = 0;

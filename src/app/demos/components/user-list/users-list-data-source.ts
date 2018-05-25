@@ -19,14 +19,28 @@ export class UsersDataSource extends MaSc5BaseTableDataSource<ApiUser> {
 
   loadData(search: MaSc5TableSearch = {}) {
     super.loadData(search);
-
-    this.userService.getUsers(search)
+console.log('a');
+    this.userService.getUsers(this.searchOptions)
       .subscribe(userList =>  {
         this.loadingSubject.next(false);
 
         if (!userList['items']) {
           this.clearDataSource();
         }
+console.log(userList);
+        this.sourceSubject.next(userList['items']);
+        this.total = userList['total'];
+      });
+  }
+
+  refreshData() {
+    super.refreshData();
+
+    console.log('refresh');
+    this.userService.getUsers(this.searchOptions)
+      .subscribe(userList =>  {
+        this.loadingSubject.next(false);
+        console.log(userList);
 
         this.sourceSubject.next(userList['items']);
         this.total = userList['total'];

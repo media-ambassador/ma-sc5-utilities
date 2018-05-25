@@ -12,5 +12,6 @@ export declare class MaSc5BaseTableDataSource<T> extends MatTableDataSource<T> {
     connect(): BehaviorSubject<T[]>;
     disconnect(): void;
     loadData(search?: MaSc5TableSearch): void;
+    refreshData(): void;
     protected clearDataSource(): void;
 }

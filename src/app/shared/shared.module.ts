@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { NgxSmartModalModule } from 'ngx-smart-modal';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -13,6 +14,7 @@ import { MaSc5CustomMaterialModule } from '../lib/modules/custom-material';
 import { MaSc5TableWrapperModule } from '../lib/modules/table-wrapper';
 
 import { MaSc5MapToIterablePipe } from '../lib/pipes/map-to-iterable';
+import { MaSc5DetailsPanelModule } from '../lib/modules/details-panel';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -24,6 +26,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     FormsModule,
     RouterModule,
     ReactiveFormsModule,
+    NgxSmartModalModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -34,7 +37,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     SimpleNotificationsModule.forRoot(),
 
     MaSc5CustomMaterialModule,
-    MaSc5TableWrapperModule
+    MaSc5TableWrapperModule,
+    MaSc5DetailsPanelModule
   ],
   declarations: [
     MaSc5MapToIterablePipe,
@@ -43,9 +47,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     FormsModule,
     ReactiveFormsModule,
     TranslateModule,
+    NgxSmartModalModule,
 
     MaSc5CustomMaterialModule,
     MaSc5TableWrapperModule,
+    MaSc5DetailsPanelModule,
 
     MaSc5MapToIterablePipe,
   ]

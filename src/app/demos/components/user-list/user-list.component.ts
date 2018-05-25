@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { SelectionModel } from '@angular/cdk/collections';
 
 import { MaSc5BaseTableComponent } from '../../../lib/modules/table-wrapper';
@@ -7,6 +7,7 @@ import { MaSc5TableSelectionEmitter } from '../../../lib/modules/table-wrapper';
 import { ApiUser } from '../../../core/api-user/api-user.model';
 import { ApiUserService } from '../../../core/api-user/api-user.service';
 import { UsersDataSource } from './users-list-data-source';
+import { MaSc5DetailsPanelComponent } from '../../../lib/modules/details-panel/details-panel.component';
 
 @Component({
   selector: 'ma-sc5-user-list',
@@ -16,6 +17,9 @@ import { UsersDataSource } from './users-list-data-source';
 export class UserListComponent extends MaSc5BaseTableComponent<ApiUser> implements OnInit {
   selection = new SelectionModel<ApiUser>(true, []);
   isTotal = false;
+  selectedUser: ApiUser;
+
+  @ViewChild(MaSc5DetailsPanelComponent) detailsPanel: MaSc5DetailsPanelComponent;
 
   constructor(private userService: ApiUserService) {
     super();
@@ -41,12 +45,20 @@ export class UserListComponent extends MaSc5BaseTableComponent<ApiUser> implemen
     this.isTotal = !!emitter.total ? emitter.total : false;
   }
 
-  showDetails() {
-    // TODO: Show sidebar panel
+  showDetails(user: ApiUser) {
+    this.selectedUser = user;
+    this.detailsPanel.open();
   }
 
   delete() {
     // TODO: Delete selected rows
+  }
+
+  refreshList(isOpen) {
+    if (!isOpen) {
+      console.log('refresh');
+      this.dataSource.refreshData();
+    }
   }
 
 }

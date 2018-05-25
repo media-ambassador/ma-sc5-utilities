@@ -1,4 +1,6 @@
 {
   "ma.sc5.common.status.Active": "Aktywny",
-  "ma.sc5.common.status.Inactive": "Nieaktywny"
+  "ma.sc5.common.status.Inactive": "Nieaktywny",
+  "ma.sc5.common.cancel": "Anuluj",
+  "ma.sc5.common.save": "Zapisz"
 }

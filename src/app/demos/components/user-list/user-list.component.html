@@ -5,7 +5,7 @@
     <mat-icon>info</mat-icon>
   </button>
   <button (click)="delete()">
-    <mat-icon>delete</mat-icon> 
+    <mat-icon>delete</mat-icon>
   </button>
 </ma-sc5-table-selected-rows>
 
@@ -19,12 +19,14 @@
     </mat-header-cell>
 
     <mat-cell *matCellDef="let element">
-      {{ element.id }}
+      <button mat-button (click)="showDetails(element)">
+          {{ element.id }}
+      </button>
     </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="firstname">
-    <mat-header-cell *matHeaderCellDef>
+    <mat-header-cell *matHeaderCellDef mat-sort-header="firstname">
       {{ "ma.sc5.tableWrapper.header.column.firstname" | translate }}
 
     </mat-header-cell>
@@ -51,3 +53,9 @@
   <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 
 </ma-sc5-table-wrapper>
+
+<ma-sc5-details-panel [headerTitle]="'Edytuj element'" (panelDisplay)="refreshList($event)">
+  <ng-container *ngIf="selectedUser">
+    <ma-sc5-user-details [user]="selectedUser"></ma-sc5-user-details>
+  </ng-container>
+</ma-sc5-details-panel>
