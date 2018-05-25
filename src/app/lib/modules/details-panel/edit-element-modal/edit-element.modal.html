@@ -13,15 +13,5 @@
       <div class="modal-content">
           <ng-content></ng-content>
       </div>
-
-      <footer>
-          <button mat-button (click)="closeModal()">
-            {{ 'ma.sc5.common.cancel' | translate }}
-          </button>
-
-          <button mat-button [color]="'orange'" (click)="saveData()">
-            {{ 'ma.sc5.common.save' | translate }}
-          </button>
-      </footer>
   </section>
 </ngx-smart-modal>

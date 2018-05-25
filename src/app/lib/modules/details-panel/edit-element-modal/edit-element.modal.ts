@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, HostBinding } from '@angular/core';
 import { NgxSmartModalService } from 'ngx-smart-modal';
-import { MaSc5DetailsPanelService } from '../details-panel.service';
 
 @Component({
   selector: 'ma-sc5-edit-element-modal',
@@ -13,8 +12,7 @@ export class MaSc5EditElementModal implements OnInit {
 
   @HostBinding('class.open') isOpen = false;
 
-  constructor(private ngxSmartModalService: NgxSmartModalService,
-              private maSc5DetailsPanelService: MaSc5DetailsPanelService) { }
+  constructor(private ngxSmartModalService: NgxSmartModalService) { }
 
   ngOnInit() {
     if (!this.identifier) {
@@ -33,9 +31,4 @@ export class MaSc5EditElementModal implements OnInit {
   closeModal() {
     this.ngxSmartModalService.getModal(this.identifier).close();
   }
-
-  saveData() {
-    this.maSc5DetailsPanelService.saveElementEditForm(this.identifier);
-  }
-
 }

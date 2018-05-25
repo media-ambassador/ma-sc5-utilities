@@ -1,0 +1,16 @@
+$desktop: 1440px;
+$tablet: 1024px;
+$tablet-portrait: 991px;
+$mobile: 767px;
+$mobile-small: 569px;
+
+
+$header-height: 115px;
+$footer-height: 50px;
+
+$layout-content-gap: 20px;
+$layout-content-height: calc( 100vh - ( #{$header-height} + #{$footer-height} + #{$layout-content-gap * 2} ) );
+
+$table-header-height: 60px;
+$table-header-cell: 57px;
+$mat-paginator-height: 56px;

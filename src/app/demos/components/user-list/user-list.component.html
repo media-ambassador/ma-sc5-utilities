@@ -26,7 +26,7 @@
   </ng-container>
 
   <ng-container matColumnDef="firstname">
-    <mat-header-cell *matHeaderCellDef>
+    <mat-header-cell *matHeaderCellDef mat-sort-header="firstname">
       {{ "ma.sc5.tableWrapper.header.column.firstname" | translate }}
 
     </mat-header-cell>
@@ -54,7 +54,7 @@
 
 </ma-sc5-table-wrapper>
 
-<ma-sc5-details-panel [headerTitle]="'Edytuj element'">
+<ma-sc5-details-panel [headerTitle]="'Edytuj element'" (panelDisplay)="refreshList($event)">
   <ng-container *ngIf="selectedUser">
     <ma-sc5-user-details [user]="selectedUser"></ma-sc5-user-details>
   </ng-container>

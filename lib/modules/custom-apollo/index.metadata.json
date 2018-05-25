@@ -1,0 +1,1 @@
+[{"__symbolic":"module","version":4,"metadata":{},"exports":[{"from":"./custom-apollo.module","export":["MaSc5CustomApolloModule"]},{"from":"./custom-apollo.service","export":["MaSc5CustomApolloService"]},{"from":"./custom-apollo.model","export":["MaSc5CustomApolloModuleConfigName","MaSc5ResponseValidation","MaSc5CustomResponse"]}]}]

@@ -54,4 +54,11 @@ export class UserListComponent extends MaSc5BaseTableComponent<ApiUser> implemen
     // TODO: Delete selected rows
   }
 
+  refreshList(isOpen) {
+    if (!isOpen) {
+      console.log('refresh');
+      this.dataSource.refreshData();
+    }
+  }
+
 }

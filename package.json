@@ -1,6 +1,6 @@
 {
   "name": "@ma_tkuchne/sc5-utilities",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Komponenty i serwisy współdzielone między mikrousługami",
   "license": "MIT",
   "scripts": {

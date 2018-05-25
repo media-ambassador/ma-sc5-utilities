@@ -1,3 +1,23 @@
-<p>
-  user-edit-name-form works!
-</p>
+<form [formGroup]="formGroup" name="UserNameForm">
+    <mat-error class="form-error" *ngFor="let error of formGroup.errors | mapToIterable">
+      <span [innerHTML]="error.val.key | translate:error.val.variables"></span>
+    </mat-error>
+
+    <mat-form-field>
+      <input matInput placeholder="{{ 'form.field.login' | translate }}" formControlName="firstname">
+
+      <mat-error *ngFor="let error of formGroup.controls['firstname'].errors | mapToIterable">
+        <span [innerHTML]="error.val.key | translate:error.val.variables"></span>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field data-el-e2e="lastname">
+        <input matInput placeholder="{{ 'form.field.login' | translate }}" formControlName="lastname">
+
+      <mat-error *ngFor="let error of formGroup.controls['lastname'].errors | mapToIterable">
+        <span [innerHTML]="error.val.key | translate:error.val.variables"></span>
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-button (click)="saveElement()">Zapisz</button>
+  </form>

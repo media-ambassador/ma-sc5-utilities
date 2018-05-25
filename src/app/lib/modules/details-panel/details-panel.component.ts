@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, HostBinding, HostListener } from '@angular/core';
+import { Component, OnInit, Input, HostBinding, HostListener, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'ma-sc5-details-panel',
@@ -7,6 +7,7 @@ import { Component, OnInit, Input, HostBinding, HostListener } from '@angular/co
 })
 export class MaSc5DetailsPanelComponent implements OnInit {
   @Input() headerTitle: string;
+  @Output() panelDisplay = new EventEmitter<boolean>();
 
   @HostBinding('class.open') isOpen = false;
 
@@ -23,9 +24,11 @@ export class MaSc5DetailsPanelComponent implements OnInit {
 
   open() {
     this.isOpen = true;
+    this.panelDisplay.emit(true);
   }
 
   close() {
     this.isOpen = false;
+    this.panelDisplay.emit(false);
   }
 }

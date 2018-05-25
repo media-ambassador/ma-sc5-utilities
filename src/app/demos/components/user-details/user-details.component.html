@@ -3,18 +3,22 @@
     <span class="mat-display-1">
       {{ user.firstname + ' ' + user.lastname }}
     </span>
+    {{ user.id }}
   </header>
 
   <mat-divider></mat-divider>
   <footer>
     <button mat-button (click)="showEditModal(userNameEdit)">Edytuj</button>
+    <button mat-button (click)="showEditModal('testModal')">Edytuj test</button>
   </footer>
 </mat-card>
 
 <ma-sc5-edit-element-modal [identifier]="userNameEdit" [modalTitle]="'Edycja nazwy'">
-	<ma-sc5-user-edit-name-form [identifier]="userNameEdit"></ma-sc5-user-edit-name-form>
+  <ma-sc5-user-edit-name-form *ngIf="showModal === userNameEdit"
+                              [formData]="user"
+                              (formSaved)="onFormSaved($event)"></ma-sc5-user-edit-name-form>
 </ma-sc5-edit-element-modal>
 
 <ma-sc5-edit-element-modal [identifier]="'userStatusEdit'" [modalTitle]="'Edycja nazwy'">
-	<ma-sc5-user-edit-status-form [identifier]="'userStatusEdit'"></ma-sc5-user-edit-status-form>
+	<ma-sc5-user-edit-status-form></ma-sc5-user-edit-status-form>
 </ma-sc5-edit-element-modal>
