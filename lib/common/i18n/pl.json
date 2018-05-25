@@ -2,5 +2,13 @@
   "ma.sc5.common.status.Active": "Aktywny",
   "ma.sc5.common.status.Inactive": "Nieaktywny",
   "ma.sc5.common.cancel": "Anuluj",
-  "ma.sc5.common.save": "Zapisz"
+  "ma.sc5.common.save": "Zapisz",
+  "validation.error.emailAddressInvalidFormat": "Niepoprawny format adresu email",
+  "validation.error.emailAddressInvalidHostname": "Nazwa hosta <strong>{{hostname}}</strong> jest niepoprawna",
+  "validation.error.invalidPassword": "Podane hasło jest nieprawidłowe",
+  "validation.error.isEmpty": "To pole jest wymagane",
+  "validation.error.notSame": "Podane hasła różnią się",
+  "validation.error.passwordInvalidLength": "Hasło powinno zawierać od 6 do 32 znaków ",
+  "validation.error.passwordInvalidMinNumbers": "Hasło powinno posiadać minimum jedną cyfrę",
+  "validation.error.passwordInvalidMinUppercase": "Hasło powinno posiadać minimum jedną wielką literę"
 }

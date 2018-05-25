@@ -58,7 +58,11 @@ export class MaSc5CustomApolloService {
       cache: new InMemoryCache(),
       defaultOptions: {
         watchQuery: {
+          fetchPolicy: 'network-only',
           errorPolicy: 'all'
+        },
+        query: {
+          fetchPolicy: 'network-only'
         }
       }
     });

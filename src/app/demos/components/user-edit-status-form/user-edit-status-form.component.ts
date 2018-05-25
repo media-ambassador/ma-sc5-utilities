@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MaSc5BaseEditForm, MaSc5DetailsPanelService } from '../../../lib/modules/details-panel';
+import { MaSc5BaseEditForm } from '../../../lib/modules/details-panel';
 import { MaSc5ValidationService } from '../../../lib/services/validation';
 import { ApiUser } from '../../../core/api-user/api-user.model';
 
