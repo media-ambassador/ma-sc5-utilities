@@ -1,11 +1,11 @@
 {
   "name": "@ma_tkuchne/sc5-utilities",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "Komponenty i serwisy współdzielone między mikrousługami",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "gulp merge-i18n-from-lib && ng serve",
+    "start": "gulp merge-i18n-from-lib && ng serve -p 4299",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -14,7 +14,8 @@
     "inline-build-templates": "gulp inline-build-templates",
     "ngc-build": "ngc -p ./tsconfig.lib.json",
     "build-styles": "gulp copy-styles && sassdoc ./lib/styles/*",
-    "prepublish": "npm run cleardown && npm run inline-build-templates && npm run ngc-build && npm run build-styles && gulp merge-lib-i18n"
+    "prepublish": "npm run cleardown && npm run inline-build-templates && npm run ngc-build && npm run build-styles && gulp merge-lib-i18n",
+    "publish": "npm publish --access public"
   },
   "repository": {
     "type": "git",
@@ -121,6 +122,7 @@
     "node-sass": "^4.9.0",
     "protractor": "~5.1.2",
     "run-sequence": "^2.2.1",
+    "sassdoc": "^2.5.0",
     "source-map-explorer": "^1.5.0",
     "ts-node": "~3.2.0",
     "tslint": "~5.9.1",

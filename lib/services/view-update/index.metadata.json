@@ -1,0 +1,1 @@
+[{"__symbolic":"module","version":4,"metadata":{},"exports":[{"from":"./view-update.service","export":["MaSc5ViewUpdateService"]},{"from":"./view-update.model","export":["MaSc5ViewUpdateType"]}]}]

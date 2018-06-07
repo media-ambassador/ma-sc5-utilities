@@ -8,6 +8,7 @@ import { ApiUser } from '../../../core/api-user/api-user.model';
 import { ApiUserService } from '../../../core/api-user/api-user.service';
 import { UsersDataSource } from './users-list-data-source';
 import { MaSc5DetailsPanelComponent } from '../../../lib/modules/details-panel/details-panel.component';
+import { MaSc5ViewUpdateService } from '../../../lib/services/view-update';
 
 @Component({
   selector: 'ma-sc5-user-list',
@@ -21,7 +22,8 @@ export class UserListComponent extends MaSc5BaseTableComponent<ApiUser> implemen
 
   @ViewChild(MaSc5DetailsPanelComponent) detailsPanel: MaSc5DetailsPanelComponent;
 
-  constructor(private userService: ApiUserService) {
+  constructor(private userService: ApiUserService,
+              private viewUpdateService: MaSc5ViewUpdateService<ApiUser>) {
     super();
 
     this.columns = [
@@ -38,6 +40,10 @@ export class UserListComponent extends MaSc5BaseTableComponent<ApiUser> implemen
 
     this.dataSource = new UsersDataSource(this.userService);
     this.dataSource.loadData();
+
+    this.viewUpdateService.watchViewUpdate().subscribe(event => {
+      this.dataSource.refreshData();
+    });
   }
 
   onSelectionChange(emitter: MaSc5TableSelectionEmitter<ApiUser>) {
@@ -52,13 +58,6 @@ export class UserListComponent extends MaSc5BaseTableComponent<ApiUser> implemen
 
   delete() {
     // TODO: Delete selected rows
-  }
-
-  refreshList(isOpen) {
-    if (!isOpen) {
-      console.log('refresh');
-      this.dataSource.refreshData();
-    }
   }
 
 }

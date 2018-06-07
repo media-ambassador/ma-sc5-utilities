@@ -1,5 +1,8 @@
 import { NgxSmartModalService } from 'ngx-smart-modal';
 import { Component, OnInit, Input } from '@angular/core';
+
+import { MaSc5ViewUpdateService } from '../../../lib/services/view-update';
+
 import { ApiUser } from '../../../core/api-user/api-user.model';
 import { ApiUserService } from '../../../core/api-user/api-user.service';
 
@@ -17,7 +20,7 @@ export class UserDetailsComponent implements OnInit {
   showModal: string;
 
   constructor(private ngxSmartModalService: NgxSmartModalService,
-              public apiUserService: ApiUserService) { }
+              private viewUpdateService: MaSc5ViewUpdateService<ApiUser>) { }
 
   ngOnInit() {
     this.user = Object.assign({}, this.user);
@@ -38,9 +41,13 @@ export class UserDetailsComponent implements OnInit {
   }
 
   onFormSaved(user: ApiUser) {
-    this.user = _.extend(this.user, user);
+    _.assignWith(this.user, user, (src, obj) => {
+        return _.isUndefined(obj) ? src : obj;
+      });
 
+    this.viewUpdateService.updateView('change', this.user);
     this.closeModal(this.showModal);
+
   }
 
 }

@@ -7,6 +7,8 @@ import { CookieService } from 'ngx-cookie-service';
 import { MaSc5CustomApolloModule } from '../lib/modules/custom-apollo';
 import { MaSc5ValidationService } from '../lib/services/validation';
 import { MaSc5UtilsService } from '../lib/services/sc5-utils';
+import { MaSc5RwdBreakpointsService } from '../lib/services/rwd-breakpoints/';
+import { MaSc5ViewUpdateService } from '../lib/services/view-update';
 
 import { ApiUserService } from './api-user/api-user.service';
 import { environment } from '../../environments/environment';
@@ -28,6 +30,8 @@ import { environment } from '../../environments/environment';
 
     MaSc5ValidationService,
     MaSc5UtilsService,
+    MaSc5RwdBreakpointsService,
+    MaSc5ViewUpdateService,
 
     ApiUserService,
   ]
