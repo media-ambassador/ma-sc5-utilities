@@ -10,6 +10,6 @@ export interface MaSc5ResponseValidation {
 }
 export interface MaSc5CustomResponse {
     success: boolean;
-    error: 'invalid' | 'validation' | 'not-found' | 'invalid' | 'invalid-token' | 'banned' | 'not-logged';
+    error: 'invalid' | 'validation' | 'not-found' | 'inactive' | 'invalid-token' | 'banned' | 'not-logged';
     validation: MaSc5ResponseValidation[];
 }
