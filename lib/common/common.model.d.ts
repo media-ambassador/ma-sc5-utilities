@@ -12,3 +12,4 @@ export interface MaSc5MenuItem {
     text: string;
     routerLink: string;
 }
+export declare type MaSc5ApiUserStatus = 'Active' | 'Inactive';

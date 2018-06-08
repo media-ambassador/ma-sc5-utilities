@@ -10,12 +10,28 @@ import { MaSc5ValidationService } from '../../services/validation';
 export class MaSc5BaseEditForm<T> implements OnInit {
   @Input() formData: T;
   @Output() formSaved = new EventEmitter<T>();
+  @Output() formCanceled = new EventEmitter();
 
   formGroup: FormGroup;
 
   constructor(protected validation: MaSc5ValidationService) { }
 
   ngOnInit() {
+
   }
 
+  cancelForm() {
+    this.formCanceled.emit();
+  }
+
+  resetForm() {
+    this.formGroup.reset();
+  }
+
+  onEnterPrevent(event) {
+    event.preventDefault();
+    event.target.blur();
+
+    return false;
+  }
 }
