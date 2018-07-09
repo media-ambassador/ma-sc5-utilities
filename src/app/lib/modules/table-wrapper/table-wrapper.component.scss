@@ -29,6 +29,8 @@
         button {
           border: none;
           background: none;
+          cursor: pointer;
+
           &:focus { outline: none; }
         }
       }
@@ -71,10 +73,8 @@
           width: 100%;
           background: white;
           z-index: 5;
-
-
         }
-      
+
         .mat-cell { overflow: visible; }
 
         .mat-column-select {
@@ -96,6 +96,7 @@
       border: none;
       background: none;
       padding: 0;
+      min-width: 20px;
 
       &::before {
         display: block;

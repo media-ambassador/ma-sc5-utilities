@@ -28,6 +28,7 @@ export declare class MaSc5TableWrapperComponent<T> implements OnInit, AfterConte
     constructor(translateService: TranslateService);
     ngOnInit(): void;
     ngAfterContentInit(): void;
+    private rangeLabel;
     ngOnDestroy(): void;
     private onTableSearchChange();
     updateColumnDisplay(index: number): void;
@@ -35,7 +36,8 @@ export declare class MaSc5TableWrapperComponent<T> implements OnInit, AfterConte
     toggleSelection(row: T): void;
     selectRow(row: T): void;
     selectAll(): void;
-    selectCurrentPage(allItems: false): void;
+    selectCurrentPage(): void;
     private emitSelection(total?);
     clearSelection(): void;
+    refreshList(): void;
 }

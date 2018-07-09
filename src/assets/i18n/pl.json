@@ -34,6 +34,7 @@
 	"ma.sc5.tableWrapper.header.column.lastname": "nazwisko",
 	"ma.sc5.tableWrapper.header.column.status": "status",
 	"ma.sc5.tableWrapper.pagination.itemsPerPage": "Elementów na stronie:",
+  "ma.sc5.tableWrapper.pagination.rangeLabel": "{{start}} - {{end}} z {{total}}",
 	"demos.home.pageTitle": "Testowa strona",
 	"home.userList.header": "Testowa lista użytkowników"
 }

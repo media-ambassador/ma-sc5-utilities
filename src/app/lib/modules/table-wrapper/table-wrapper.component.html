@@ -5,40 +5,34 @@
   </div>
 
   <header>
-      <h1 class="mat-headline">{{ header | translate }}</h1>
+    <h1 class="mat-headline">{{ header | translate }}</h1>
 
-      <div>
-        <button>
-          <mat-icon>refresh</mat-icon>
-        </button>
-      </div>
+    <div>
+      <button (click)="refreshList()">
+        <mat-icon>refresh</mat-icon>
+      </button>
+    </div>
 
-      <div>
-        <button [matMenuTriggerFor]="columnDisplayMenu" class="dropdown-menu mat-body-1">
-          <mat-icon>list</mat-icon>
-        </button>
-    
-        <mat-menu #columnDisplayMenu>
-          <ul>
-            <ng-container *ngFor="let column of columns; let index = index;">
-              <li mat-menu-item *ngIf="column.name != 'select'">
-                <mat-checkbox [checked]="column.display"
-                              [disabled]="column.disabled"
-                              (change)="updateColumnDisplay(index)"
-                              (click)="$event.stopPropagation()">
-                  {{ 'ma.sc5.tableWrapper.header.column.' + column.name | translate }}
-                </mat-checkbox>
-              </li>
-            </ng-container>
-          </ul>
-        </mat-menu>
-      </div>
+    <div>
+      <button [matMenuTriggerFor]="columnDisplayMenu" class="dropdown-menu mat-body-1">
+        <mat-icon>list</mat-icon>
+      </button>
 
-      <div>
-        <button>
-          <mat-icon>settings</mat-icon>
-        </button>
-      </div>
+      <mat-menu #columnDisplayMenu>
+        <ul>
+          <ng-container *ngFor="let column of columns; let index = index;">
+            <li mat-menu-item *ngIf="column.name != 'select'">
+              <mat-checkbox [checked]="column.display"
+                            [disabled]="column.disabled"
+                            (change)="updateColumnDisplay(index)"
+                            (click)="$event.stopPropagation()">
+                {{ 'ma.sc5.tableWrapper.header.column.' + column.name | translate }}
+              </mat-checkbox>
+            </li>
+          </ng-container>
+        </ul>
+      </mat-menu>
+    </div>
 
   </header>
 
@@ -46,22 +40,20 @@
     <mat-table [dataSource]="dataSource">
         <ng-container matColumnDef="select">
           <mat-header-cell *matHeaderCellDef>
-            <button [matMenuTriggerFor]="tableSelectionMenu" class="dropdown-menu dropdown-selection">
+            <button mat-button [matMenuTriggerFor]="tableSelectionMenu" class="dropdown-menu dropdown-selection">
               <mat-checkbox [checked]="selectionAll || selectionCurrentPage"
                             [indeterminate]="selection.hasValue() && (!selectionAll && !selectionCurrentPage)"></mat-checkbox>
             </button>
-          
+
             <mat-menu #tableSelectionMenu>
-              <button mat-menu-item>
-                  <mat-checkbox [checked]="selectionCurrentPage"
-                                (change)="selectCurrentPage()">
+              <button mat-menu-item (click)="selectCurrentPage()">
+                  <mat-checkbox [checked]="selectionCurrentPage">
                   {{ 'ma.sc5.tableWrapper.common.selectCurrentPage' | translate }}
                 </mat-checkbox>
               </button>
 
-              <button mat-menu-item>
-                  <mat-checkbox [checked]="selectionAll"
-                                (change)="selectAll()">
+              <button mat-menu-item (click)="selectAll()">
+                  <mat-checkbox [checked]="selectionAll">
                   {{ 'ma.sc5.tableWrapper.common.selectAll' | translate }}
                 </mat-checkbox>
               </button>
@@ -78,7 +70,7 @@
         </ng-container>
 
         <ng-content></ng-content>
-    
+
     </mat-table>
   </perfect-scrollbar>
 

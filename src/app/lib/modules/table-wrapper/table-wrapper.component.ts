@@ -81,6 +81,25 @@ export class MaSc5TableWrapperComponent<T> implements OnInit, AfterContentInit, 
       })
     );
 
+    this.paginator._intl.itemsPerPageLabel = this.translateService.instant('ma.sc5.tableWrapper.pagination.itemsPerPage');
+    this.paginator._intl.getRangeLabel = this.rangeLabel;
+  }
+
+  private rangeLabel = (page: number, pageSize: number, length: number) => {
+    if (length === 0 || pageSize === 0) {
+      return `0 z ${length}`;
+    }
+
+    length = Math.max(length, 0);
+    const startIndex = page * pageSize;
+    const endIndex = startIndex < length ?
+        Math.min(startIndex + pageSize, length) :
+        startIndex + pageSize;
+
+    return this.translateService.instant(
+      'ma.sc5.tableWrapper.pagination.rangeLabel',
+      { start: startIndex + 1, end: endIndex, total: length }
+    );
   }
 
   ngOnDestroy() {
@@ -131,7 +150,7 @@ export class MaSc5TableWrapperComponent<T> implements OnInit, AfterContentInit, 
     this.emitSelection(this.selectionAll);
   }
 
-  selectCurrentPage(allItems: false) {
+  selectCurrentPage() {
     this.selectionCurrentPage = !this.selectionCurrentPage;
     this.selectionAll = false;
 
@@ -154,5 +173,9 @@ export class MaSc5TableWrapperComponent<T> implements OnInit, AfterContentInit, 
       selection: this.selection,
       total: false
     });
+  }
+
+  refreshList() {
+    this.dataSource.refreshData();
   }
 }
