@@ -9,9 +9,4 @@ export interface MaSc5LoginIdentity {
   password_timestamp: number;
 }
 
-export interface MaSc5MenuItem {
-  text: string;
-  routerLink: string;
-}
-
 export type MaSc5ApiUserStatus = 'Active' | 'Inactive';

@@ -63,20 +63,29 @@ body {
         li {
           width: 100px;
           max-width: 100px;
+          min-width: 100px;
           flex: 1;
           text-align: center;
 
           a {
+            display: block;
+            padding: 10px 0;
             text-decoration: none;
             color: $black-87-opacity;
+            border: 1px solid transparent;
+            border-radius: 10px;
 
-            .mat-icon svg {
-              @include size(25px);
+            .mat-icon {
+              color: mat-color($mat-orange, 600);
             }
 
             span {
               display: block;
               margin-top: 10px;
+            }
+
+            &.active {
+              border-color: mat-color($mat-gray, 200);
             }
           }
         }
@@ -84,3 +93,4 @@ body {
     }
   }
 }
+

@@ -64,10 +64,10 @@
 <mde-popover #mainMenuPopover="mdePopover" [mdePopoverOverlapTrigger]="false">
   <div class="popover-content services-popover-content">
     <ul>
-      <li *ngFor="let service of services">
-        <a href="{{ sc5UtilsService.getModuleUrl(service) }}">
-          <mat-icon class="icon-logo" svgIcon="{{ 'icon-' + service }}"></mat-icon>
-          <span>{{ 'ma.sc5.service.' + service | translate }}</span>
+      <li *ngFor="let catalogue of catalogues">
+        <a href="{{ catalogue.link }}" [ngClass]="{ 'active': catalogue.name == activeCatalogue }">
+          <mat-icon class="icon-logo"> {{ catalogue.icon }}</mat-icon>
+          <span>{{ sc5UtilsService.getCatalogueName(catalogue.name) }}</span>
         </a>
       </li>
     </ul>

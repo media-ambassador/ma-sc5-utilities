@@ -1,12 +1,13 @@
-<header>
+<header *ngIf="serviceName">
   <ma-sc5-main-header [channels]="identity.channels"
-                      [services]="identity.services"
+                      [catalogues]="catalogues"
+                      [activeCatalogue]="activeCatalogue.name"
                       [userId]="identity.id"
                       [pageTitle]="pageTitle"
                       [defaultChannel]="identity.default_channel">
   </ma-sc5-main-header>
 
-  <ma-sc5-main-menu [menuItems]="menuItems"></ma-sc5-main-menu>
+  <ma-sc5-main-menu [catalogue]="activeCatalogue" [activeService]="serviceName"></ma-sc5-main-menu>
 </header>
 
 <section>

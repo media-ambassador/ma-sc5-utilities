@@ -1,7 +1,10 @@
 import { OnInit } from '@angular/core';
-import { MaSc5MenuItem } from '../../../common/common.model';
+import { AppMenuTreeItem } from '../app-menu-tree';
+import { MaSc5UtilsService } from '../../../services/sc5-utils';
 export declare class MaSc5MainMenuComponent implements OnInit {
-    menuItems: MaSc5MenuItem[];
-    constructor();
+    sc5UtilsService: MaSc5UtilsService;
+    catalogue: AppMenuTreeItem;
+    activeService: string;
+    constructor(sc5UtilsService: MaSc5UtilsService);
     ngOnInit(): void;
 }

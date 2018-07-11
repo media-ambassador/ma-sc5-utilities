@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { NotificationsService } from 'angular2-notifications';
 import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 import { CookieService } from 'ngx-cookie-service';
@@ -15,14 +14,22 @@ export class MaSc5UtilsService {
 
   private modulePrefix = 'app';
 
-  redirectToModule(moduleName: string, timeout = 0) {
+  redirectToService(name: string, timeout = 0) {
     setTimeout(() => {
-      window.location.href = `${window.location.protocol}//${window.location.host}/${moduleName}/${this.modulePrefix}/`;
+      window.location.href = `${window.location.protocol}//${window.location.host}/${name}/${this.modulePrefix}/`;
     }, timeout);
   }
 
-  getModuleUrl(moduleName: string) {
+  getServiceUrl(moduleName: string) {
     return `${window.location.protocol}//${window.location.host}/${moduleName}/${this.modulePrefix}/`;
+  }
+
+  getCatalogueName(name: string) {
+    return this.translate.instant(`ma.sc5.catalogue.title.${name}`);
+  }
+
+  getServiceName(name: string) {
+    return this.translate.instant(`ma.sc5.service.title.${name}`);
   }
 
   registerIcon(name: string, filePath: string) {
@@ -31,7 +38,7 @@ export class MaSc5UtilsService {
 
   logoutUser(timeout = 1500) {
     this.cookieService.deleteAll('/');
-    this.redirectToModule('authentication', timeout);
+    this.redirectToService('authentication', timeout);
   }
 
 }

@@ -3,8 +3,6 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 
 import { MaSc5BaseLayoutView } from '../../lib/modules/base-layout/base-layout.model';
-import { MaSc5MenuItem } from '../../lib/common/common.model';
-import { subscribe } from 'graphql';
 
 @Component({
   selector: 'ma-sc5-home',
@@ -20,6 +18,10 @@ export class HomeComponent implements OnInit, MaSc5BaseLayoutView {
 
   getTitle(): Observable<string> {
     return Observable.of('demos.home.pageTitle');
+  }
+
+  getServiceName(): string {
+    return 'user';
   }
 
 }

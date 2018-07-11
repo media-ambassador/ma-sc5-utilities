@@ -1,5 +1,7 @@
 <ul>
-  <li *ngFor="let item of menuItems">
-    <a [routerLink]="item.routerLink" routerLinkActive="active">{{ item.text | translate }}</a>
+  <li *ngFor="let service of catalogue.services">
+    <a href="{{ sc5UtilsService.getServiceUrl(service) }}" [ngClass]="{ 'active': service === activeService }">
+        {{ sc5UtilsService.getServiceName(service) }}
+    </a>
   </li>
 </ul>

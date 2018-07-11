@@ -9,8 +9,10 @@ export declare class MaSc5UtilsService {
     private cookieService;
     constructor(translate: TranslateService, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer, cookieService: CookieService);
     private modulePrefix;
-    redirectToModule(moduleName: string, timeout?: number): void;
-    getModuleUrl(moduleName: string): string;
+    redirectToService(name: string, timeout?: number): void;
+    getServiceUrl(moduleName: string): string;
+    getCatalogueName(name: string): any;
+    getServiceName(name: string): any;
     registerIcon(name: string, filePath: string): void;
     logoutUser(timeout?: number): void;
 }

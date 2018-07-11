@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MaSc5MenuItem } from '../../../common/common.model';
+import { AppMenuTreeItem } from '../app-menu-tree';
+import { MaSc5UtilsService } from '../../../services/sc5-utils';
 
 @Component({
   selector: 'ma-sc5-main-menu',
@@ -7,9 +8,10 @@ import { MaSc5MenuItem } from '../../../common/common.model';
   styleUrls: ['./main-menu.component.scss']
 })
 export class MaSc5MainMenuComponent implements OnInit {
-  @Input() menuItems: MaSc5MenuItem[];
+  @Input() catalogue: AppMenuTreeItem;
+  @Input() activeService: string;
 
-  constructor() { }
+  constructor(public sc5UtilsService: MaSc5UtilsService) { }
 
   ngOnInit() {
   }
