@@ -52,5 +52,7 @@
   "ma.sc5.service.title.report": "Raport sprzedaży",
   "ma.sc5.service.title.globalsettings": "Ustawienia",
   "ma.sc5.service.title.account": "Konto operatora",
-  "ma.sc5.service.title.user": "Zarządzanie operatorami"
+  "ma.sc5.service.title.user": "Zarządzanie operatorami",
+  "ma.sc5.tooltip.emptyNotification": "Brak powiadomień",
+  "ma.sc5.tooltip.emptyHelp": "Brak dokumentów pomocy"
 }

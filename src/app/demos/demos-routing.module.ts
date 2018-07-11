@@ -3,10 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { MaSc5BaseLayoutModule, MaSc5BaseLayout } from '../lib/modules/base-layout';
 import { HomeComponent } from './home/home.component';
-import { DemosBaseLayoutResolve } from './demos-base-layout.resolve';
 
 const routes: Routes = [
-  { path: '', component: MaSc5BaseLayout, resolve: { identity: DemosBaseLayoutResolve },
+  { path: '', component: MaSc5BaseLayout,
     children: [
       { path: '', component: HomeComponent }
     ]

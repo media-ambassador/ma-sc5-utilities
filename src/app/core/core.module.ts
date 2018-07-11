@@ -12,6 +12,8 @@ import { MaSc5ViewUpdateService } from '../lib/services/view-update';
 
 import { ApiUserService } from './api-user/api-user.service';
 import { environment } from '../../environments/environment';
+import { MaSc5IdentityService } from '../lib/services/identity/identity.service';
+import { MaSc5EnvironmentConfigName } from '../lib/common';
 
 @NgModule({
   imports: [
@@ -32,6 +34,8 @@ import { environment } from '../../environments/environment';
     MaSc5UtilsService,
     MaSc5RwdBreakpointsService,
     MaSc5ViewUpdateService,
+    MaSc5IdentityService,
+    { provide: MaSc5EnvironmentConfigName, useValue: environment },
 
     ApiUserService,
   ]

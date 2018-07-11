@@ -66,6 +66,8 @@
 	"ma.sc5.service.title.globalsettings": "Ustawienia",
 	"ma.sc5.service.title.account": "Konto operatora",
 	"ma.sc5.service.title.user": "Zarządzanie operatorami",
+	"ma.sc5.tooltip.emptyNotification": "Brak powiadomień",
+	"ma.sc5.tooltip.emptyHelp": "Brak dokumentów pomocy",
 	"ma.sc5.tableWrapper.common.selectAll": "Wszystkie",
 	"ma.sc5.tableWrapper.common.selectCurrentPage": "Na tej stronie",
 	"ma.sc5.tableWrapper.common.filter": "filtruj...",
@@ -76,10 +78,10 @@
 	"ma.sc5.tableWrapper.header.column.status": "status",
 	"ma.sc5.tableWrapper.pagination.itemsPerPage": "Elementów na stronie:",
 	"ma.sc5.tableWrapper.pagination.rangeLabel": "{{start}} - {{end}} z {{total}}",
+	"demos.home.pageTitle": "Testowa strona",
+	"home.userList.header": "Testowa lista użytkowników",
 	"ma.sc5.service.account": "Zarządzanie",
 	"ma.sc5.service.attribute": "Atrybuty",
 	"ma.sc5.service.template": "Szablony",
-	"ma.sc5.service.user": "Moje konto",
-	"demos.home.pageTitle": "Testowa strona",
-	"home.userList.header": "Testowa lista użytkowników"
+	"ma.sc5.service.user": "Moje konto"
 }

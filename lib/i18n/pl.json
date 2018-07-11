@@ -66,6 +66,8 @@
 	"ma.sc5.service.title.globalsettings": "Ustawienia",
 	"ma.sc5.service.title.account": "Konto operatora",
 	"ma.sc5.service.title.user": "Zarządzanie operatorami",
+	"ma.sc5.tooltip.emptyNotification": "Brak powiadomień",
+	"ma.sc5.tooltip.emptyHelp": "Brak dokumentów pomocy",
 	"ma.sc5.tableWrapper.common.selectAll": "Wszystkie",
 	"ma.sc5.tableWrapper.common.selectCurrentPage": "Na tej stronie",
 	"ma.sc5.tableWrapper.common.filter": "filtruj...",

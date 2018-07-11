@@ -1,1 +1,1 @@
-[{"__symbolic":"module","version":4,"metadata":{"MaSc5LoginIdentity":{"__symbolic":"interface"},"MaSc5MenuItem":{"__symbolic":"interface"},"MaSc5ApiUserStatus":{"__symbolic":"interface"}}}]
+[{"__symbolic":"module","version":4,"metadata":{"MaSc5EnvironmentConfig":{"__symbolic":"interface"},"MaSc5EnvironmentConfigName":"maSc5EnvironmentConfig","MaSc5ApiUserStatus":{"__symbolic":"interface"}}}]

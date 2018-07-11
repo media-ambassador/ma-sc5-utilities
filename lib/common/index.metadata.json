@@ -1,1 +1,1 @@
-[{"__symbolic":"module","version":4,"metadata":{},"exports":[{"from":"./common.model","export":["MaSc5LoginIdentity"]}]}]
+[{"__symbolic":"module","version":4,"metadata":{},"exports":[{"from":"./common.model","export":["MaSc5EnvironmentConfig","MaSc5EnvironmentConfigName","MaSc5ApiUserStatus"]}]}]

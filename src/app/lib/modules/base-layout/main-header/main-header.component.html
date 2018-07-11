@@ -1,6 +1,8 @@
 <div>
   <div class="logo">
-    <mat-icon class="icon-logo" svgIcon="sc5-logo"></mat-icon>
+    <a [routerLink]="['/']">
+      <mat-icon class="icon-logo" svgIcon="sc5-logo"></mat-icon>
+    </a>
   </div>
 
   <div class="channels">
@@ -32,12 +34,12 @@
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="#" matTooltip="{{ 'ma.sc5.tooltip.emptyNotification' | translate }}">
             <mat-icon>notifications_none</mat-icon>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="#" matTooltip="{{ 'ma.sc5.tooltip.emptyHelp' | translate }}">
             <mat-icon>help_circle</mat-icon>
         </a>
       </li>
@@ -51,9 +53,6 @@
     </span>
 
     <mat-menu #userMenu="matMenu">
-      <button mat-menu-item >
-        {{ 'ma.sc5.main.header.menu.edit' | translate}}
-      </button>
       <button mat-menu-item (click)="sc5UtilsService.logoutUser()">
         {{ 'ma.sc5.main.header.menu.logout' | translate }}
       </button>

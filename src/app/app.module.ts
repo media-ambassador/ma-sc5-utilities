@@ -10,6 +10,7 @@ import { CoreModule } from './core/core.module';
 
 import { AppComponent } from './app.component';
 import { DemosModule } from './demos/demos.module';
+import { MaSc5IdentityService } from './lib/services/identity';
 
 export function appInitializerFactory(translate: TranslateService, injector: Injector) {
   return () => new Promise<any>((resolve: any) => {
@@ -26,6 +27,10 @@ export function appInitializerFactory(translate: TranslateService, injector: Inj
       });
     });
   });
+}
+
+export function identityFactory(sc5IdentityService: MaSc5IdentityService) {
+  return  () => sc5IdentityService.init();
 }
 
 @NgModule({
@@ -45,6 +50,12 @@ export function appInitializerFactory(translate: TranslateService, injector: Inj
       provide: APP_INITIALIZER,
       useFactory: appInitializerFactory,
       deps: [TranslateService, Injector],
+      multi: true
+    },
+    {
+      provide: APP_INITIALIZER,
+      useFactory: identityFactory,
+      deps: [MaSc5IdentityService],
       multi: true
     }
   ],

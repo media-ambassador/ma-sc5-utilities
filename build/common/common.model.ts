@@ -1,18 +1,13 @@
-export interface MaSc5LoginIdentity {
-  id: string;
-  first_name: string;
-  last_name: string;
-  services: string[];
-  default_service: string;
-  channels: string[];
-  default_channel: string;
-  password_timestamp: number;
+
+export interface MaSc5EnvironmentConfig {
+  production: boolean;
+  apiGraphQL: string;
+  passwordMaxAge: number;
+  tokenKeyName: string;
+  tokenExpires: number;
+  identityKeyName: string;
 }
 
-export interface MaSc5MenuItem {
-  text: string;
-  routerLink?: string;
-  link?: string;
-}
+export const MaSc5EnvironmentConfigName = 'maSc5EnvironmentConfig';
 
 export type MaSc5ApiUserStatus = 'Active' | 'Inactive';
